@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>CertQuiz · Practica exámenes de certificación</title>
+    <meta name="description" content="CertQuiz: PWA offline para practicar exámenes de certificación (Microsoft, AWS, Google) con preguntas de opción múltiple. Tus datos nunca salen del navegador." />
+    <meta name="theme-color" content="#F8FAFC" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="CertQuiz" />
+    <script>
+      // Apply the saved theme before first paint (avoids flashing).
+      (function () {
+        var t = 'system';
+        try { var s = JSON.parse(localStorage.getItem('cq:v1:settings') || '{}'); if (s && s.theme) t = s.theme; } catch (e) {}
+        var dark = t === 'dark' || (t !== 'light' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="./icons/icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="preload" href="./fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin vite-ignore />
+    <link rel="stylesheet" href="./css/main.css" vite-ignore />
+    <link rel="stylesheet" href="./css/components.css" vite-ignore />
+  </head>
+  <body>
+    <a class="skip" href="#view" data-testid="skip-link">Saltar al contenido</a>
+    <header class="topbar">
+      <a class="brand" href="#/" data-testid="brand-link" aria-label="CertQuiz, inicio">
+        <img src="./icons/icon.svg" alt="" width="30" height="30" />
+        <span>CertQuiz</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#/" data-nav="" data-testid="nav-home">Inicio</a>
+        <a href="#/history" data-nav="history" data-testid="nav-history">Historial</a>
+        <a href="#/settings" data-nav="settings" data-testid="nav-settings">Ajustes</a>
+      </nav>
+      <button type="button" id="theme-btn" class="icon-btn theme-btn" aria-label="Cambiar a modo oscuro" title="Cambiar tema" data-testid="theme-toggle-btn">
+        <svg class="theme-btn__moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="theme-btn__sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+      </button>
+      <button type="button" id="help-btn" class="icon-btn" aria-label="Atajos de teclado" title="Atajos de teclado (?)" data-testid="help-btn">?</button>
+    </header>
+    <main id="view" tabindex="-1">
+      <p class="loading">Cargando…</p>
+    </main>
+    <div id="toasts" class="toasts" data-testid="toast-region"></div>
+    <noscript><p style="padding:24px">CertQuiz necesita JavaScript para funcionar.</p></noscript>
+    <script type="module" src="./js/app.js" vite-ignore></script>
+  </body>
+</html>

@@ -1,0 +1,2338 @@
+{
+  "schema_version": "1.0",
+  "certification": {
+    "id": "microsoft-dp-700",
+    "name": "Microsoft Fabric Data Engineer",
+    "exam_code": "DP-700",
+    "provider": "Microsoft",
+    "language": "es"
+  },
+  "domains": [
+    {
+      "id": "domain-01",
+      "name": "Implementar y administrar una solución de análisis",
+      "questions": [
+        {
+          "id": "DP700-Q024",
+          "type": "single_choice",
+          "question": "Su empresa realiza la transición a una arquitectura de malla de datos mediante Microsoft Fabric.\nUsted es responsable de organizar los datos en dominios.\nDebe configurar las opciones para la administración independiente de reglas y restricciones por cada unidad de negocio.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Asigne áreas de trabajo a varios dominios."
+            },
+            {
+              "id": "B",
+              "text": "Configure etiquetas de confidencialidad especificas del dominio."
+            },
+            {
+              "id": "C",
+              "text": "Cree áreas de trabajo con la configuración de gobernanza compartida."
+            },
+            {
+              "id": "D",
+              "text": "Delegar la configuración de nivel de cliente a dominios."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "Delegar la configuración de nivel de inquilino en el nivel de dominio permite a cada unidad de negocio administrar su propia configuración de gobernanza, lo que es esencial para implementar una arquitectura de malla de datos. La asignación de áreas de trabajo a varios dominios complica la gobernanza y no admite la administración independiente. La creación de áreas de trabajo con la configuración de gobernanza compartida centraliza el control y no facilita la gobernanza específica del dominio. La configuración de etiquetas de confidencialidad específicas del dominio está relacionada con la gobernanza, pero no aborda la necesidad de administrar reglas y restricciones independientes por cada unidad de negocio.",
+          "references": [
+            {
+              "title": "dominios Fabric"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q026",
+          "type": "multiple_choice",
+          "question": "Su organización implementa una arquitectura de malla de datos mediante Microsoft Fabric.\nEl departamento de Tl planea delegar controles de gobernanza en unidades de negocio.\nDebe configurar las opciones para la administración de datos independiente por unidades de negocio.\n¿Qué tres acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Asigne etiquetas de confidencialidad especificas del dominio."
+            },
+            {
+              "id": "B",
+              "text": "Asigne áreas de trabajo a dominios."
+            },
+            {
+              "id": "C",
+              "text": "Delegar la configuración del tenant a los dominios."
+            },
+            {
+              "id": "D",
+              "text": "Habilite las etiquetas de confidencialidad de nivel de dominio."
+            },
+            {
+              "id": "E",
+              "text": "Implemente seguridad de nivel de fila."
+            },
+            {
+              "id": "F",
+              "text": "Especifique los administradores de dominio."
+            }
+          ],
+          "correct_answers": [
+            "B",
+            "C",
+            "F"
+          ],
+          "explanation": "La asignación de áreas de trabajo a dominios específicos garantiza que todos los datos de esas áreas de trabajo se rigen por las reglas y restricciones del dominio. Delegar la configuración de nivel de inquilino en el nivel de dominio permite a cada unidad de negocio definir sus propias reglas y restricciones, lo que permite la gobernanza específica del dominio. Especificar administradores de dominio permite una administración eficaz de la configuración de dominio y garantiza que se aplique una gobernanza específica del dominio. La implementación de la seguridad de nivel de fila es una práctica común de gobernanza de datos, pero no habilita directamente la gobernanza de nivel de dominio en una arquitectura de malla de datos. La asignación de etiquetas de confidencialidad específicas del dominio está relacionada con la protección de datos, pero no habilita directamente la administración de datos independiente por unidades de negocio.",
+          "references": [
+            {
+              "title": "dominios Fabric | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q028",
+          "type": "single_choice",
+          "question": "Tiene un almacenamiento de datos denominado DB1.\nDebe usar un proyecto de base de datos para implementar cambios de esquema en DB1.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cree un proyecto de base de datos."
+            },
+            {
+              "id": "B",
+              "text": "Cree un nuevo proyecto de base de datos, exporte una aplicación de capa de datos (DAC) desde DB1 e importe la DAC en el proyecto."
+            },
+            {
+              "id": "C",
+              "text": "Cree un nuevo proyecto de estilo SDK e importe el esquema de DB1 en el proyecto."
+            },
+            {
+              "id": "D",
+              "text": "Cree un nuevo proyecto de estilo SDK, exporte una aplicación de capa de datos (DAC) desde DB1 e importe la DAC en el proyecto."
+            }
+          ],
+          "correct_answers": [
+            "C"
+          ],
+          "explanation": "Use un proyecto de base de datos SQL de estilo SDK e importe el esquema de base de datos existente; los enfoques de DAC o los proyectos no SDK no cumplen el requisito.",
+          "references": [
+            {
+              "title": "Introducción a los proyectos de base de datos SQL"
+            },
+            {
+              "title": "¿Qué son los proyectos de base de datos SQL?"
+            },
+            {
+              "title": "Uso de proyectos de SQL Database"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q030",
+          "type": "multiple_choice",
+          "question": "Su empresa tiene un almacenamiento de datos en Microsoft Fabric para almacenar datos de ventas.\nLos distintos departamentos necesitan acceso a los datos, pero cada departamento solo debe ver los datos relevantes para sus operaciones.\nDebe configurar el almacenamiento de datos para que cada departamento solo pueda ver sus propios datos de ventas.\n¿Qué dos acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cree una política de seguridad con un predicado de filtro para los departamentos."
+            },
+            {
+              "id": "B",
+              "text": "Cree una vista que filtre los datos en función de los valores de las columnas de departamento."
+            },
+            {
+              "id": "C",
+              "text": "Implemente la seguridad de nivel de columna para los datos de ventas confidenciales."
+            },
+            {
+              "id": "D",
+              "text": "Creación de una función para devolver valores de departamento basados en USER_NAME()"
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "D"
+          ],
+          "explanation": "Las respuestas correctas son crear una directiva de seguridad con un predicado de filtro para departamentos y crear una función para devolver valores de departamento basados en USER_NAME() porque la implementación de Row- Level Security (RLS) en Microsoft Fabric almacenes de datos requiere una función de predicado que determina las filas a las que un usuario puede acceder y una directiva de seguridad que aplica esa función como predicado de filtro a la tabla. La función evalúa la identidad del usuario actual (por ejemplo, mediante USER_NAME()) y devuelve solo las filas de departamento que están autorizadas para ver, mientras que la directiva de seguridad aplica esta lógica automáticamente para todas las consultas. La creación de una vista no refuerza la seguridad, y la seguridad a nivel de columna no restringe las filas, por lo que ambas son insuficientes para garantizar que cada departamento solo vea sus propios datos de ventas.",
+          "references": [
+            {
+              "title": "Seguridad a nivel de fila en el almacenamiento de datos de Fabric - Capacitación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q032",
+          "type": "single_choice",
+          "question": "Tiene un área de trabajo de Fabric denominada Sales-Prod que contiene un almacenamiento de datos denominado SalesDW,\nTiene un grupo de Microsoft Entra llamado Analistas de ventas al que no se le ha asignado un rol de espacio de trabajo.\nConceda a los analistas de ventas el permiso Leer en SalesDW, pero los usuarios del grupo no pueden ejecutar consultas SELECT.\nDebe asegurarse de que el grupo pueda solo consultar una tabla denominada dbo.FactSales e impedir el acceso a todas las demás tablas. La solución NO debe conceder acceso a todos los elementos del área de trabajo.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Asigne el rol de Visor en el área de trabajo Sales-Prod al grupo de Analistas de ventas."
+            },
+            {
+              "id": "B",
+              "text": "Cree un predicado de seguridad de nivel de fila (RLS) en dbo.FactSales para el Grupo de Analistas de Ventas."
+            },
+            {
+              "id": "C",
+              "text": "Conceda el permiso SELECT a dbo. FactSales al grupo Analistas de ventas mediante T-SQL en SalesDW."
+            },
+            {
+              "id": "D",
+              "text": "Aplique una etiqueta de confidencialidad a SalesDW y configure Microsoft Purview para permitir solo el grupo Analistas de ventas."
+            }
+          ],
+          "correct_answers": [
+            "C"
+          ],
+          "explanation": "En un almacén de datos de Fabric, los usuarios deben tener permisos de nivel de cómputo para consultar tablas. Conceder SELECT en dbo. FactSales mediante T-SQL proporciona acceso de nivel de objeto a esa tabla específica sin conceder permisos de área de trabajo más amplios. Agregar el grupo al rol Visor concede acceso a todos los elementos del área de trabajo, infringiendo el requisito. RLS filtra las filas, pero no restringe las tablas que se pueden consultar. Las etiquetas de confidencialidad clasifican y protegen los datos, pero no aplican permisos de consulta de nivel de tabla.",
+          "references": [
+            {
+              "title": "Permisos de proceso"
+            },
+            {
+              "title": "Comprender el modelo de seguridad de Fabric"
+            },
+            {
+              "title": "Información general e instrucciones de gobernanza"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q053",
+          "type": "single_choice",
+          "question": "Va a implementar una nueva solución de almacenamiento de datos mediante Microsoft Fabric.\nDebe implementar una solución que capture los cambios en las tablas de dimensiones a lo largo del tiempo, a la vez que conserva los datos históricos.\n¿Qué tipo de dimensión de variación lenta (SCD) mantiene los datos históricos mediante la creación de nuevas filas?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Tipo 1 Dimensión de variación lenta (SCD)"
+            },
+            {
+              "id": "B",
+              "text": "Dimensión de variación lenta de tipo 2 (SCD)"
+            },
+            {
+              "id": "C",
+              "text": "Dimensión de variación lenta de tipo 3 (SCD)"
+            },
+            {
+              "id": "D",
+              "text": "Tipo 4 Dimensión de variación lenta (SCD)"
+            }
+          ],
+          "correct_answers": [
+            "B"
+          ],
+          "explanation": "ScD de tipo 2 es la opción más adecuada para capturar los cambios en las tablas de dimensiones a lo largo del tiempo, a la vez que se conservan los datos históricos. Agrega nuevos registros para los cambios, manteniendo un historial completo para una clave natural determinada. El tipo 4 SCD implica la creación de una nueva dimensión para los cambios, que no es adecuado para realizar el seguimiento de los cambios históricos dentro de la misma tabla de dimensiones. El tipo 1 SCD sobrescribe los datos existentes y no mantiene el historial, lo que no cumple el requisito. El tipo 3 SCD agrega historial como una nueva columna, pero su ámbito está limitado y no es adecuado para un seguimiento histórico completo.",
+          "references": [
+            {
+              "title": "Modelado dimensional en Microsoft Fabric Warehouse: Tablas de dimensión - Formación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q063",
+          "type": "multiple_choice",
+          "question": "Su empresa usa Microsoft Fabric para administrar canalizaciones de datos para una solución de análisis a gran escala.\nObserve que se produjo un error en varias ejecuciones de canalización debido a errores en la actividad Búsqueda, que no devolvió datos coincidentes.\nDebe configurar la canalización para finalizar con detalles de error específicos cuando la actividad búsqueda no devuelve datos coincidentes.\n¿Qué dos acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Agregue una actividad Fail después de la actividad Lookup."
+            },
+            {
+              "id": "B",
+              "text": "Agregue una actividad de reintento después de la actividad de búsqueda."
+            },
+            {
+              "id": "C",
+              "text": "Agregue una actividad de Espera después de la actividad de búsqueda."
+            },
+            {
+              "id": "D",
+              "text": "Configure la actividad Fail con detalles de error específicos."
+            },
+            {
+              "id": "E",
+              "text": "Use una actividad de reintento para controlar el error."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "D"
+          ],
+          "explanation": "Agregar una actividad Fail después de la actividad de búsqueda es esencial porque permite que la canalización finalice con un mensaje de error y código específicos, abordando directamente el requisito. Configurar esta actividad de fallo con información detallada sobre errores garantiza que la canalización proporcione comentarios claros cuando falla. Agregar una actividad de espera no resuelve la necesidad de una terminación de errores personalizada. Usar una actividad de reintento puede parecer una forma de manejar los errores, pero no cumple con el requisito de que la canalización falle con detalles específicos del error. Utiliza la actividad Fail para causar que la ejecución de la canalización falle con un mensaje de error y un código de error personalizados: Entrenamiento | Microsoft Learn"
+        },
+        {
+          "id": "DP700-Q069",
+          "type": "single_choice",
+          "question": "Su organización usa Microsoft Fabric para administrar la ingesta de datos en tiempo real desde varios dispositivos IoT a través de Azure Event Hubs. Los datos se procesan y almacenan en un Microsoft Delta Lake para su posterior análisis.\nDebe asegurarse de que las columnas innecesarias, como los identificadores de sensor, se quitan antes de almacenar los datos en formato Microsoft Delta Lake.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Almacene los datos en un área de almacenamiento provisional temporal y filtre las columnas antes del almacenamiento final."
+            },
+            {
+              "id": "B",
+              "text": "Use un sistema de procesamiento por lotes para limpiar los datos antes de la transferencia."
+            },
+            {
+              "id": "C",
+              "text": "Use un trabajo de Spark para preprocesar datos antes de la ingesta."
+            },
+            {
+              "id": "D",
+              "text": "Use el procesador de eventos para quitar columnas innecesarias."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "El uso del procesador de eventos para quitar columnas innecesarias antes de enviar datos a lakehouse es la solución más eficaz, ya que automatiza el proceso de filtrado y garantiza que solo se almacenan los datos pertinentes. El uso de un trabajo de Spark para el preprocesamiento puede ser innecesariamente complejo y intensivo de recursos en comparación con las herramientas integradas. Almacenar datos en un área de almacenamiento provisional temporal antes de filtrar puede provocar ineficiencias en el procesamiento y el almacenamiento. El uso de un sistema de procesamiento por lotes para limpiar datos no es adecuado para el procesamiento en tiempo real, ya que presenta retrasos y no es eficaz para flujos de datos continuos.",
+          "references": [
+            {
+              "title": "Comience a trabajar con *lakehouses* en Microsoft Fabric - Formación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q081",
+          "type": "multiple_choice",
+          "question": "Su organización usa Microsoft Fabric para la ingeniería de datos.\nUsted notará fallos en trabajos de Spark de Microsoft debido a versiones de bibliotecas incompatibles después de actualizar un entorno de ejecución de Spark.\nDebe resolver problemas de compatibilidad que provocan fallos de ejecución de trabajos de Microsoft Spark.\n¿Qué dos acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Ajuste la configuración de memoria del ejecutor de Spark."
+            },
+            {
+              "id": "B",
+              "text": "Vuelva a publicar el entorno después de eliminar las bibliotecas incompatibles."
+            },
+            {
+              "id": "C",
+              "text": "Vuelva a una versión anterior del entorno de ejecución de Spark."
+            },
+            {
+              "id": "D",
+              "text": "Actualice las versiones de la biblioteca para que coincidan con el nuevo entorno de ejecución de Spark."
+            },
+            {
+              "id": "E",
+              "text": "Use una versión de biblioteca obsoleta."
+            }
+          ],
+          "correct_answers": [
+            "B",
+            "D"
+          ],
+          "explanation": "Para resolver problemas de compatibilidad que provocan errores en trabajos de Microsoft Spark, es esencial publicar nuevamente el entorno después de quitar las bibliotecas incompatibles. Esto garantiza que solo se apliquen configuraciones compatibles, lo que impide errores de trabajo. Además, actualizar las versiones de biblioteca para que coincidan con los nuevos requisitos de tiempo de ejecución de Spark Microsoft es fundamental, ya que alinea las bibliotecas con el tiempo de ejecución actualizado, lo que garantiza que se cumplen todas las dependencias. El uso de una versión de biblioteca obsoleta no resuelve problemas de compatibilidad y el ajuste de la configuración de memoria del ejecutor de Spark no resuelve bibliotecas incompatibles que provocan errores de trabajo. Revertir a una versión anterior del entorno de ejecución de Spark podría parecer una solución, pero no aborda la causa principal de los problemas de compatibilidad de la biblioteca después de una actualización.",
+          "references": [
+            {
+              "title": "Crear, configurar y usar un entorno en Fabric | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q082",
+          "type": "single_choice",
+          "question": "Tiene un dominio de Fabric denominado Domain1 que contiene un subdominio denominado Subdomain1.\nTiene un área de trabajo denominada Workspace1 que se asigna a Domain1.\nTiene previsto asignar Workspace1 a Subdomain1.\nDebe asegurarse de que Workspace1 está asignado al subdominio sin cambiar su asignación de dominio.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Edite la configuración de dominio."
+            },
+            {
+              "id": "B",
+              "text": "Edite la configuración del subdominio."
+            },
+            {
+              "id": "C",
+              "text": "Edite la configuración del área de trabajo."
+            },
+            {
+              "id": "D",
+              "text": "Mueva el área de trabajo a un nuevo dominio y vuelva a asignar el subdominio."
+            }
+          ],
+          "correct_answers": [
+            "C"
+          ],
+          "explanation": "La asignación de un área de trabajo a un subdominio se realiza desde la configuración del área de trabajo; Editar subdominio o configuración de dominio no asignará un área de trabajo especifica.",
+          "references": [
+            {
+              "title": "Prácticas más frecuentes para planear y crear dominios en Microsoft Fabric"
+            },
+            {
+              "title": "Power BI planificación de la implementación: áreas de trabajo a nivel de arrendatario"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q083",
+          "type": "single_choice",
+          "question": "Su organización usa los pipelines de implementación de Microsoft Fabric para administrar soluciones de análisis en las etapas de Desarrollo, Prueba y Producción.\nSolo debe restringir la edición de la configuración de canalización a los usuarios autorizados.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Asigne roles de administrador de canalización."
+            },
+            {
+              "id": "B",
+              "text": "Configure los permisos del área de trabajo."
+            },
+            {
+              "id": "C",
+              "text": "Configurar permisos del elemento en el Entorno."
+            },
+            {
+              "id": "D",
+              "text": "Implemente el control de acceso basado en rol."
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "Para asegurarse de que solo los usuarios autorizados pueden editar la configuración de canalización, la asignación de roles de administrador de canalización es esencial. Este enfoque mantiene la seguridad y el control sobre el proceso de implementación. La configuración de permisos del área de trabajo implica establecer niveles de acceso para los usuarios dentro de un área de trabajo, pero no restringe específicamente la edición de la configuración de canalización. La implementación del control de acceso basado en roles administra los permisos de usuario, pero no influye específicamente en quién puede editar la configuración de canalización.",
+          "references": [
+            {
+              "title": "El proceso de tuberías de despliegue: entrenamiento | Microsoft Learn"
+            },
+            {
+              "title": "Introducción a canalizaciones de implementación: entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q086",
+          "type": "single_choice",
+          "question": "Su empresa está implementando una nueva estrategia de gobernanza de datos mediante Microsoft Fabric.\nEl almacenamiento de datos contiene varias tablas con información confidencial que se deben proteger contra el acceso no autorizado.\nDebe asegurarse de que solo el personal médico autorizado pueda acceder a la columna MedicalHistory en la tabla Pacientes.\n¿Qué debe usar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Seguridad de nivel de columna"
+            },
+            {
+              "id": "B",
+              "text": "Enmascaramiento dinámico de datos"
+            },
+            {
+              "id": "C",
+              "text": "Seguridad de nivel de fila"
+            },
+            {
+              "id": "D",
+              "text": "Roles del área de trabajo"
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "Seguridad a nivel de columna es esencial para garantizar que solo personal médico autorizado pueda acceder a la columna \"HistorialMédico\" en la tabla \"Pacientes\". Permite un control preciso sobre quién puede ver columnas específicas, cumpliendo el requisito de proteger la información confidencial. Enmascaramiento dinámico de datos, aunque resulta útil para ocultar datos, no restringe el acceso a columnas específicas. Seguridad a Nivel de Fila se centra en controlar el acceso a filas específicas basadas en roles de usuario, lo cual no aborda la necesidad de un control de acceso específico para columnas. Los roles de área de trabajo proporcionan permisos en el nivel de área de trabajo, pero carecen de la granularidad necesaria para las restricciones específicas de columna.",
+          "references": [
+            {
+              "title": "Seguridad para el almacenamiento de datos en Microsoft Fabric - Entrenamiento | Microsoft Learn"
+            },
+            {
+              "title": "Seguridad a nivel de columna en el almacenamiento de datos de Fabric - Capacitación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q087",
+          "type": "single_choice",
+          "question": "Su empresa usa una Microsoft Fabric almacenamiento de datos para almacenar la información de salario de los empleados.\nDebe configurar permisos para que solo ciertos usuarios puedan ver los datos de salario sin enmascarar y otros vean datos enmascarados.\n¿Qué permiso debe conceder a los usuarios autorizados?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Conceda permiso de auditoría."
+            },
+            {
+              "id": "B",
+              "text": "Otorgue el permiso de SELECT."
+            },
+            {
+              "id": "C",
+              "text": "Conceda permiso UNMASK."
+            },
+            {
+              "id": "D",
+              "text": "Otorgue permisos de lectura a todos los datos mediante Apache Spark."
+            }
+          ],
+          "correct_answers": [
+            "C"
+          ],
+          "explanation": "La respuesta correcta es conceder el permiso UNMASK porque en los almacenes de datos de Microsoft Fabric (basados en las capacidades del motor de Azure SQL Database), el enmascaramiento dinámico de datos (DDM) permite que los datos confidenciales, como los salarios, estén enmascarados para los usuarios sin privilegios mientras que siguen siendo visibles para los usuarios autorizados. Conceder el permiso UNMASK explícitamente permite a los usuarios designados ver los datos originales desprotegidos sin alterar el acceso a nivel de tabla. Conceder solo SELECT seguiría devolviendo resultados enmascarados y los permisos como Audit o Spark read access no invalidan las reglas de enmascaramiento. Por lo tanto, UNMASK es el permiso específico necesario para permitir a los usuarios aprobados ver los datos de salario desenmascarados, mientras que otros siguen viendo valores enmascarados. Explora el enmascaramiento dinámico de datos - Entrenamiento | Microsoft Learn Enmascaramiento de datos dinámico en el almacenamiento de datos de Fabric: entrenamiento | Microsoft Learn",
+          "references": [
+            {
+              "title": "Uso compartido de los datos y administración de permisos"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q088",
+          "type": "multiple_choice",
+          "question": "Su empresa usa Microsoft Fabric para administrar un almacenamiento de datos que contiene una tabla con información confidencial de los empleados.\nLa tabla contiene columnas como EmployeelD, Name, Salary y SocialSecurityNumber.\nDebe restringir el acceso a las columnas Salario y Número de Seguridad Social exclusivamente al personal de RR. HH.\n¿Qué tres acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cree una vista para restringir el acceso a las columnas Salary y SocialSecurityNumber."
+            },
+            {
+              "id": "B",
+              "text": "Cree un rol de RR. HH. y asígnelo al personal de RR. HH."
+            },
+            {
+              "id": "C",
+              "text": "Denegar el permiso SELECT en las columnas confidenciales a otros roles,"
+            },
+            {
+              "id": "D",
+              "text": "Conceda el permiso SELECT en las columnas confidenciales al rol de RR. HH."
+            },
+            {
+              "id": "E",
+              "text": "Use el enmascaramiento dinámico de datos en las columnas confidenciales."
+            }
+          ],
+          "correct_answers": [
+            "B",
+            "C",
+            "D"
+          ],
+          "explanation": "Crear un rol de RR. HH. y concederle el permiso SELECT en las columnas confidenciales garantiza que solo el personal de RR. HH. pueda acceder a los datos de Salario y Número de Seguridad Social. Denegar el permiso SELECT a todos los demás roles protege aún más los datos evitando el acceso no autorizado. La creación de una vista no es adecuada para este escenario, ya que no proporciona el control de acceso de nivel de columna necesario.",
+          "references": [
+            {
+              "title": "Seguridad para el almacenamiento de datos en Microsoft Fabric - Entrenamiento | Microsoft Learn"
+            },
+            {
+              "title": "permisos granulares de SQL en Microsoft Fabric - Formación | Microsoft Leam"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q089",
+          "type": "multiple_choice",
+          "question": "Su organización usa Microsoft Fabric para la administración del almacenamiento de datos. El equipo de seguridad se preocupa por el acceso no autorizado a la información confidencial del cliente en una base de datos.\nDebe asegurarse de que los datos confidenciales están protegidos y solo son accesibles para los usuarios autorizados.\n¿Qué tres acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Defina el enmascaramiento dinámico de datos para columnas confidenciales."
+            },
+            {
+              "id": "B",
+              "text": "Conceda permiso UNMASK a los usuarios autorizados."
+            },
+            {
+              "id": "C",
+              "text": "Quite todas las reglas de enmascaramiento de una base de datos."
+            },
+            {
+              "id": "D",
+              "text": "Revocar el permiso SELECT de usuarios sin privilegios."
+            },
+            {
+              "id": "E",
+              "text": "Pruebe el enmascaramiento con un usuario sin privilegios."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "B",
+            "E"
+          ],
+          "explanation": "Definir el enmascaramiento dinámico de datos para columnas confidenciales garantiza que los usuarios no autorizados no puedan ver información confidencial, en consonancia con el objetivo de seguridad. Conceder permiso UNMASK a los usuarios autorizados les permite acceder a datos sin máscara, manteniendo el acceso controlado. Probar el enmascaramiento con un usuario sin privilegios confirma la eficacia de las reglas de enmascaramiento, lo que garantiza que funcionan según lo previsto. La eliminación de todas las reglas de enmascaramiento expondría datos confidenciales, lo que contradecía el objetivo de protegerla. Revocar el permiso SELECT de usuarios sin privilegios no es práctico, ya que restringe el acceso a todos los datos, no solo a la información confidencial.",
+          "references": [
+            {
+              "title": "Seguridad para el almacenamiento de datos en Microsoft Fabric - Entrenamiento | Microsoft Learn"
+            },
+            {
+              "title": "Cómo implementar el enmascaramiento dinámico de datos en Fabric Data Warehouse - Entrenamiento | Microsoft"
+            },
+            {
+              "title": "Learn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domain-02",
+      "name": "Ingerir y transformar datos",
+      "questions": [
+        {
+          "id": "DP700-Q002",
+          "type": "multiple_choice",
+          "question": "Tiene un conjunto de datos grande almacenado en un Microsoft Fabric Lakehouse, incluidas las transacciones de ventas de varias regiones.\nDebe implementar una estrategia para admitir cargas de datos incrementales al tiempo que mantiene la integridad y la coherencia de los datos.\n¿Qué dos acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Adoptar una arquitectura de medallón para la organización de datos."
+            },
+            {
+              "id": "B",
+              "text": "Cargue los datos directamente en el modelo dimensional sin transformación."
+            },
+            {
+              "id": "C",
+              "text": "Utilice tuberías de Data Factory para la transformación de datos."
+            },
+            {
+              "id": "D",
+              "text": "Use Dataflows Gen2 para la transformación y limpieza de datos."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "D"
+          ],
+          "explanation": "La adopción de una arquitectura de medallón para la organización de datos y el uso de Dataflows Gen2 para la transformación y limpieza de datos son estrategias eficaces para garantizar una alta calidad de los datos y admitir cargas incrementales de datos. Una arquitectura medallion organiza los datos en capas, lo que permite una carga incremental eficaz y garantiza la calidad de los datos en cada fase del proceso de transformación. Microsoft Dataflows Gen2, basado en Power Query, proporcionan una manera visual y sin código de transformar y limpiar datos, lo que garantiza una alta calidad de los datos antes de cargarlos en el modelo dimensional. La carga de datos directamente en el modelo dimensional sin transformación puede provocar incoherencias y una calidad de datos deficiente, que no es adecuada para un modelo dimensional que requiere datos limpios y conformes. El uso de canalizaciones de Data Factory para la transformación de datos es menos eficaz en comparación con las soluciones automatizadas proporcionadas por Dataflows Gen2 y la arquitectura medallion."
+        },
+        {
+          "id": "DP700-Q003",
+          "type": "single_choice",
+          "question": "Su organización usa Microsoft Fabric para administrar datos en plataformas en la nube.\nTiene previsto integrar datos de un servicio de almacenamiento en la nube en una instancia de LakeHouse.\nDebe asegurarse de que los datos del servicio de almacenamiento en la nube sean accesibles dentro de lakehouse sin duplicación.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cree un acceso directo que apunte al servicio de almacenamiento en la nube."
+            },
+            {
+              "id": "B",
+              "text": "Utiliza una canalización de Data Factory para copiar datos en el \"lakehouse\"."
+            },
+            {
+              "id": "C",
+              "text": "Use una canalización de Data Factory para exportar datos a Azure Blob Storage y, a continuación, importarlos en lakehouse."
+            },
+            {
+              "id": "D",
+              "text": "Utilice una canalización de Data Factory para transformar los datos antes de cargarlos en el lakehouse."
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "La creación de un acceso directo en el lakehouse que apunte al servicio de almacenamiento en la nube permite acceder directamente a los datos sin crear copias redundantes, aprovechando la capacidad de Microsoft OneLake para unificar los datos en diferentes sistemas de almacenamiento. El uso de una canalización de Data Factory para transformar y cargar datos daría lugar a copias redundantes y a un aumento de los costos de almacenamiento, lo que no es necesario al usar accesos directos de Microsoft OneLake.",
+          "references": [
+            {
+              "title": "métodos abreviados de OneLake - Entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q004",
+          "type": "single_choice",
+          "question": "Tiene un centro de eventos de Fabric que contiene una base de datos KQL denominada DB1.\nLos datos se ingieren en DB1 desde varios orígenes.\nDebe transformar los datos durante la ingesta. La solución debe minimizar el esfuerzo de desarrollo.\n¿Qué debe usar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "dataflows"
+            },
+            {
+              "id": "B",
+              "text": "KQL"
+            },
+            {
+              "id": "C",
+              "text": "Cuadernos"
+            },
+            {
+              "id": "D",
+              "text": "T-SQL"
+            }
+          ],
+          "correct_answers": [
+            "B"
+          ],
+          "explanation": "KQL admite transformaciones en tiempo de ingesta a través de directivas de actualización; T-SQL tiene como objetivo los almacenes de datos, los cuadernos requieren escritura/orquestación, y los flujos de datos son para la preparación por lotes en almacenes de datos o lakehouses.",
+          "references": [
+            {
+              "title": "Choose un almacén de datos analíticos en Microsoft Fabric"
+            },
+            {
+              "title": "Almacenar y consultar datos en tiempo real"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q005",
+          "type": "single_choice",
+          "question": "Su organización usa Microsoft Fabric para administrar datos de varios orígenes, incluidos Azure SQL Database.\nDebe replicar continuamente los datos de Azure SQL Database en OneLake en un formato listo para el análisis y consultable. La replicación debe producirse casi en tiempo real y no debe requerir canalizaciones ETL complejas.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cree un flujo de datos para la importación continua de datos."
+            },
+            {
+              "id": "B",
+              "text": "Cree un flujo de datos para la importación periódica de datos."
+            },
+            {
+              "id": "C",
+              "text": "Implementar el reflejo de base de datos."
+            },
+            {
+              "id": "D",
+              "text": "Use canalizaciones para la importación continua de datos."
+            }
+          ],
+          "correct_answers": [
+            "C"
+          ],
+          "explanation": "La implementación del reflejo de la base de datos en Microsoft Fabric es la solución más adecuada, ya que garantiza la sincronización continua de datos en OneLake sin necesidad de procesos ETL complejos. La creación de un flujo de datos para la importación continua de datos podría parecer factible, pero no ofrece las funcionalidades de integración sin problemas y creación de reflejo automático de Microsoft Fabric. El uso de Azure Data Factory para la replicación continua de datos es inadecuado en este contexto, ya que está diseñado para el procesamiento por lotes y las tareas ETL en lugar de la replicación continua en tiempo real.",
+          "references": [
+            {
+              "title": "¿Qué es el mirroring en Fabric? - Entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q006",
+          "type": "multiple_choice",
+          "question": "Usa Microsoft Fabric Warehouse para administrar la ingesta y transformación de datos.\nDebe configurar una solución para ingerir datos por lotes de varios archivos CSV almacenados en Azure Blob Storage. La solución debe asegurarse de que el proceso sea eficaz y controle los errores de forma eficaz.\n¿Qué tres acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Especifique una ubicación para las filas rechazadas."
+            },
+            {
+              "id": "B",
+              "text": "Transforme los datos con Azure Data Lake Storage Gen2 antes de la ingesta."
+            },
+            {
+              "id": "C",
+              "text": "Transforme los datos con Power BI antes de la ingesta."
+            },
+            {
+              "id": "D",
+              "text": "Use la instrucción COPY para cargar datos."
+            },
+            {
+              "id": "E",
+              "text": "Utilice caracteres comodín en la ruta para cargar varios archivos."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "D",
+            "E"
+          ],
+          "explanation": "Para lograr una ingesta de datos eficaz y un control eficaz de errores, es fundamental usar la instrucción COPY, especificar un REJECTED_ROW_LOCATION y usar caracteres comodín. La instrucción COPY es óptima para cargar datos de Microsoft Azure Blob Storage, lo que garantiza la eficacia. La especificación de un REJECTED_ROW_LOCATION mejora la administración de errores mediante el aislamiento de filas problemáticas para un análisis posterior. El uso de caracteres comodín permite la carga masiva de varios archivos, lo que simplifica el proceso. La transformación de datos con Power BI o Azure Data Lake Storage Gen2 antes de la ingesta agrega complejidad innecesaria cuando el enfoque se centra en la ingesta eficaz mediante la instrucción COPY.",
+          "references": [
+            {
+              "title": "Load data using T-SQL - Training | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q007",
+          "type": "single_choice",
+          "question": "Use Microsoft Fabric para administrar los datos en almacenes y almacenes de lago.\nDebe integrar datos de un almacén y un lago en una sola tabla para su análisis. La solución debe minimizar el esfuerzo de desarrollo.\n¿Qué debe usar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Azure Data Factory"
+            },
+            {
+              "id": "B",
+              "text": "Instrucción CREATE TABLE AS SELECT (CTAS)."
+            },
+            {
+              "id": "C",
+              "text": "Flujo de datos Gen2"
+            },
+            {
+              "id": "D",
+              "text": "Instrucción SELECT INTO."
+            }
+          ],
+          "correct_answers": [
+            "B"
+          ],
+          "explanation": "La instrucción CREATE TABLE AS SELECT (CTAS) es la mejor opción para integrar datos de un almacén y un lago en una sola tabla, ya que permite la creación de una nueva tabla basada en datos combinados. Dataflow Gen2, aunque resulta útil para la preparación y transformación de datos, no admite directamente la creación de nuevas tablas a partir de orígenes de datos combinados. La instrucción SELECT INTO puede crear una nueva tabla, pero no es adecuada para integrar datos de varios orígenes. Azure Data Factory es un servicio de integración de datos que podría parecer adecuado para integrar datos de varios orígenes, pero no admite directamente la creación de tablas a partir de orígenes de datos combinados en un almacén o un lago.",
+          "references": [
+            {
+              "title": "Load data using T-SQL - Training | Microsoft Learn"
+            },
+            {
+              "title": "Creación de tablas en el almacén"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q008",
+          "type": "single_choice",
+          "question": "Utilizas Microsoft Fabric para administrar datos en plataformas en la nube.\nTiene previsto cargar datos por lotes desde Azure Blob Storage en un almacén de datos.\nDebe determinar el método más eficaz para importar estos datos mediante herramientas de Microsoft Fabric.\n¿Qué debe usar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Azure Synapse Analytics."
+            },
+            {
+              "id": "B",
+              "text": "Instrucción COPY con firma de acceso compartido."
+            },
+            {
+              "id": "C",
+              "text": "Tubería."
+            },
+            {
+              "id": "D",
+              "text": "Flujos de datos Gen2."
+            }
+          ],
+          "correct_answers": [
+            "B"
+          ],
+          "explanation": "La instrucción COPY con firma de acceso compartido ingiere eficazmente datos por lotes de Azure Blob Storage en un almacén de datos, debido a la transferencia de datos directa y segura que facilita. Por el contrario, una canalización de Data Factory requiere una configuración manual, lo que hace que sea menos eficaz. Los flujos de datos Gen2 se centran en la preparación y transformación de datos, que no se alinea con la tarea de ingesta de datos por lotes. Azure Synapse Analytics no está diseñado para la ingesta eficaz de datos por lotes mediante herramientas de Microsoft Fabric.",
+          "references": [
+            {
+              "title": "Load data using T-SQL - Training | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q010",
+          "type": "single_choice",
+          "question": "Su organización usa Microsoft Fabric para procesar datos de streaming desde dispositivos IoT.\nDebe transformar los datos de streaming en tiempo real para su análisis.\n¿Qué debe usar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Azure Data Factory para la orquestación de datos."
+            },
+            {
+              "id": "B",
+              "text": "Azure Event Hubs para la ingesta de datos en tiempo real."
+            },
+            {
+              "id": "C",
+              "text": "Azure Stream Analytics para el procesamiento en tiempo real."
+            },
+            {
+              "id": "D",
+              "text": "Transmisión Estructurada de Spark con tablas Delta."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "Spark Structured Streaming con tablas Delta es la solución más adecuada para la ingesta y transformación de datos en tiempo real debido a su capacidad de controlar de forma eficaz los datos de streaming al tiempo que mantiene la integridad de los datos a través de transacciones ACID. Azure Stream Analytics, aunque es capaz de procesar en tiempo real, no ofrece el mismo nivel de funcionalidades de integración y transformación. Azure Data Factory está pensado para la orquestación de datos y carece de las características necesarias para la ingesta y transformación de datos en tiempo real. Azure Event Hubs está diseñado para la ingesta de datos en tiempo real, pero no proporciona las funcionalidades de transformación necesarias para el análisis en tiempo real.",
+          "references": [
+            {
+              "title": "Usar tablas delta con datos en streaming - Formación | Microsoft Learn"
+            },
+            {
+              "title": "Explora el almacén de datos Microsoft Fabric - Capacitación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q011",
+          "type": "multiple_choice",
+          "question": "Su empresa usa Microsoft Fabric para administrar y analizar grandes volúmenes de datos de streaming de varios orígenes.\nDebe implementar una solución que filtre los datos no válidos y agregue campos calculados antes de almacenarlos en un lago.\n¿Qué tres acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Agregue columnas calculadas mediante expresiones de Spark SQL."
+            },
+            {
+              "id": "B",
+              "text": "Filtre las filas con valores en columnas críticas."
+            },
+            {
+              "id": "C",
+              "text": "Use un archivo CSV para el procesamiento por lotes de los datos."
+            },
+            {
+              "id": "D",
+              "text": "Use el procesamiento por lotes para las transformaciones de datos."
+            },
+            {
+              "id": "E",
+              "text": "Usa Spark Structured Streaming para leer el flujo de datos."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "B",
+            "E"
+          ],
+          "explanation": "El uso de Microsoft Spark Structured Streaming para leer el flujo de datos en un dataFrame es el primer paso para procesar y transformar los datos. El filtrado de filas con valores garantiza que solo se procesen y almacenen datos válidos, lo que mejora la calidad de los datos. La adición de columnas calculadas enriquece el flujo de datos con la información adicional, lo que puede resultar útil para el análisis posterior. El uso de un archivo CSV para el procesamiento por lotes no cumple el requisito de procesamiento y transformación en tiempo real. Los marcos de procesamiento por lotes no son adecuados para las transformaciones de datos en tiempo real, ya que no admiten el flujo de datos continuo.",
+          "references": [
+            {
+              "title": "Explora el almacén de datos Microsoft Fabric - Capacitación | Microsoft Learn"
+            },
+            {
+              "title": "Usar tablas delta con datos en streaming - Formación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q033",
+          "type": "multiple_choice",
+          "question": "Su organización usa Microsoft Fabric para administrar canalizaciones de datos en un proceso ETL a gran escala. La configuración implica varias canalizaciones que deben controlar los distintos conjuntos de datos dinámicamente, lo que reduce la codificación de disco duro y mejora la capacidad de mantenimiento.\nDebe reutilizar los componentes de canalización con distintas entradas durante la ejecución.\n¿Cuáles son las dos opciones que debe configurar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Codificar las rutas de acceso del conjunto de datos."
+            },
+            {
+              "id": "B",
+              "text": "Pase valores externos como parámetros."
+            },
+            {
+              "id": "C",
+              "text": "Use configuraciones fijas de conjuntos de datos."
+            },
+            {
+              "id": "D",
+              "text": "Usa la interpolación de cadenas."
+            }
+          ],
+          "correct_answers": [
+            "B",
+            "D"
+          ],
+          "explanation": "Las rutas de acceso de conjunto de datos de codificación dura no admiten la ejecución dinámica y requieren cambios manuales para cada conjunto de datos, lo que es ineficaz. El uso de la interpolación de cadenas es eficaz, ya que permite la construcción de expresiones dinámicas mediante la incorporación de valores de parámetros, lo que facilita el control de varios conjuntos de datos. Pasar valores externos como parámetros es fundamental para la ejecución dinámica, ya que permite que la canalización se adapte a diferentes conjuntos de datos sin codificación rígida. Las configuraciones de conjuntos de datos fijas no son adecuadas porque carecen de la flexibilidad necesaria para los cambios en tiempo de ejecución, lo que no cumple los requisitos dinámicos del escenario.",
+          "references": [
+            {
+              "title": "Parámetros para Data Factory en Microsoft Fabric - Capacitación | Microsoft Learn"
+            },
+            {
+              "title": "Expresiones y funciones para Data Factory en Microsoft Fabric - Formación | Microsoft Learn"
+            },
+            {
+              "title": "Load data using T-SQL - Training | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q034",
+          "type": "single_choice",
+          "question": "Tiene un workspace de Fabric que contiene un lakehouse llamado Lakehouse1.\nDebe crear una solución que cargue datos de un archivo CSV almacenado en Azure Data Lake Storage Gen2 en Lakehouse1. La solución debe ser interactiva y admitir la colaboración.\n¿Qué tipo de elemento debe crear?",
+          "options": [
+            {
+              "id": "A",
+              "text": "una canalización de datos"
+            },
+            {
+              "id": "B",
+              "text": "un flujo de datos"
+            },
+            {
+              "id": "C",
+              "text": "un cuaderno"
+            },
+            {
+              "id": "D",
+              "text": "una definición de trabajo de Apache Spark"
+            }
+          ],
+          "correct_answers": [
+            "C"
+          ],
+          "explanation": "Los cuadernos son interactivos y colaborativos; las canalizaciones o flujos de datos están orientadas a la orquestación y preparación repetibles; Las definiciones de trabajos de Spark son cargas de trabajo de producción no interactivas.",
+          "references": [
+            {
+              "title": "Describe Microsoft Fabric Real-Time Intelligence?"
+            },
+            {
+              "title": "Exploración de cuadernos"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q041",
+          "type": "single_choice",
+          "question": "Tiene un flujo de datos de Dataflow Gen2 en Fabric que usa una puerta de enlace de datos local.\nDescubre que una actualización falla tras ejecutarse durante aproximadamente una hora.\nDebe solucionar la causa del error.\n¿Qué debe hacer primero?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Compruebe los parámetros máximos por canalización. />"
+            },
+            {
+              "id": "B",
+              "text": "Compruebe el número máximo de ejecuciones en cola por canalización."
+            },
+            {
+              "id": "C",
+              "text": "Compruebe el tiempo de espera máximo para las ejecuciones de actividad de canalización."
+            },
+            {
+              "id": "D",
+              "text": "Compruebe la versión de la puerta de enlace de datos local."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "Los problemas de la versión de la puerta de enlace suelen provocar errores de actualización de larga duración; Los tiempos de espera de canalización, las ejecuciones en cola y los límites de parámetros se relacionan con las canalizaciones, no con la actualización de Dataflows Gen2 a través de la puerta de enlace.",
+          "references": [
+            {
+              "title": "Introducción a las limitaciones de Data Factory"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q048",
+          "type": "multiple_choice",
+          "question": "Va a implementar un almacenamiento de datos mediante Microsoft Fabric.\nTiene previsto integrar datos de varios orígenes, incluidas las bases de datos de Microsoft Azure Data Lake Storage Gen2 y Microsoft SQL Server.\nDebe diseñar un proceso para cargar datos de forma eficaz en tablas, garantizando la calidad y la coherencia de los datos, y asegurar que todos los recursos computacionales utilizados para el procesamiento se administren a través de la capacidad de Fabric.\n¿Qué dos tareas debe recomendar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Use Azure Synapse Analytics para la integración de datos."
+            },
+            {
+              "id": "B",
+              "text": "Use canalizaciones de Data Factory para la orquestación ETL y la ejecución de T-SQL."
+            },
+            {
+              "id": "C",
+              "text": "Use flujos de datos para ingerir y transformar datos de Azure Data Lake Storage Gen2."
+            },
+            {
+              "id": "D",
+              "text": "Use paquetes SSIS para la integración de datos."
+            }
+          ],
+          "correct_answers": [
+            "B",
+            "C"
+          ],
+          "explanation": "El uso de canalizaciones y flujos de datos de Microsoft Data Factory son tanto métodos eficaces para orquestar procesos ETL y transformar datos de varios orígenes en un modelo dimensional. Las canalizaciones de Microsoft Data Factory permiten una compleja orquestación y ejecución de scripts T-SQL, garantizando una transformación y carga de datos eficaces. Los flujos de datos ofrecen una solución de poco código para la ingesta y transformación de datos mediante Power Query, lo que las convierte en adecuadas para integrar datos de Microsoft Azure Data Lake Storage Gen2. El uso de paquetes SSIS para la integración de datos es menos eficaz en comparación con herramientas modernas, como Data Factory y flujos de datos, especialmente en un entorno de Microsoft Fabric. Aunque Azure Synapse Analytics es una herramienta eficaz para el análisis y la integración de datos, no está diseñado especificamente para los procesos ETL necesarios para transformar y cargar datos en un modelo dimensional.",
+          "references": [
+            {
+              "title": "Explora el Microsoft Fabric lakehouse - Training | Microsoft Learn"
+            },
+            {
+              "title": "Prepare los datos para el análisis y los informes: entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q049",
+          "type": "multiple_choice",
+          "question": "Va a implementar una solución de almacenamiento de datos mediante Microsoft Fabric.\nEl almacenamiento de datos integra datos de varios orígenes, incluidos Microsoft Azure Data Lake Storage Gen2 y bases de datos de Microsoft SQL Server.\nDebe recomendar un proceso ETL que transforme y cargue eficazmente los datos en tablas de modelos dimensionales con fines de informes.\n¿Qué tres acciones debe recomendar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cargue datos directamente sin almacenamiento provisional."
+            },
+            {
+              "id": "B",
+              "text": "Continúe sin comprobar la calidad de los datos."
+            },
+            {
+              "id": "C",
+              "text": "Almacenar provisionalmente los datos antes de cargarlos."
+            },
+            {
+              "id": "D",
+              "text": "Transforme los datos para que coincidan con el modelo."
+            },
+            {
+              "id": "E",
+              "text": "Use una herramienta ETL básica sin características de automatización."
+            },
+            {
+              "id": "F",
+              "text": "** Use tuberías de Data Factory."
+            }
+          ],
+          "correct_answers": [
+            "C",
+            "D",
+            "F"
+          ],
+          "explanation": "El uso de las canalizaciones de Microsoft Data Factory para orquestar el proceso ETL es esencial para administrar flujos de trabajo complejos y garantizar una integración de datos eficiente. Los datos de origen en tablas de etapa ayudan a minimizar el impacto en los sistemas de operación y apoyan la transformación de datos, lo que es crucial para mantener la calidad de los datos. La transformación de los datos de origen para alinearse con la estructura del modelo dimensional garantiza que los datos se limpian y se ajustan al formato necesario, lo que admite informes precisos. La carga de datos directamente desde sistemas de origen sin almacenamiento provisional puede provocar problemas de calidad de datos, lo que hace que sea una opción incorrecta. El uso de una herramienta ETL básica sin características de automatización es ineficaz en comparación con las herramientas avanzadas de ETL. Continuar sin comprobar la calidad de los datos puede dar lugar a que se carguen datos de baja calidad, lo que conduce a informes inexactos.",
+          "references": [
+            {
+              "title": "Modelado Dimensional en Microsoft Fabric Warehouse: Carga de tablas - Entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q051",
+          "type": "single_choice",
+          "question": "Tiene un namespace de Azure Event Hubs que recibe telemetría JSON de 50 000 dispositivos.\nTiene un área de trabajo de Fabric que contiene un centro de eventos y una base de datos KQL.\nSolo se necesita un subconjunto de campos para el análisis y se debe cambiar el nombre de algunas columnas.\nDebe transformar los eventos antes de que se escriban en una tabla de base de datos KQL y conservar solo los campos necesarios.\n¿Qué debe usar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cree una secuencia de eventos que transforme los eventos y escriba la salida en la tabla de base de datos KQL."
+            },
+            {
+              "id": "B",
+              "text": "Configure el activador de datos para filtrar y renombrar campos y escribir la salida en la tabla de la base de datos KQL."
+            },
+            {
+              "id": "C",
+              "text": "Configure la ingesta directa en la tabla de base de datos KQL y use una directiva de actualización para transformar los datos después de la ingesta."
+            },
+            {
+              "id": "D",
+              "text": "Utilice un hub de inteligencia en tiempo real para explorar el flujo de datos y conservar solo los campos necesarios en la tabla de base de datos KQL."
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "Una secuencia de eventos es la opción correcta cuando se deben transformar los datos antes de escribirlos en una tabla de base de datos KQL. Puede filtrar, reconfigurar y renombrar campos sobre la marcha, de modo que solo persistan los datos necesarios. La ingesta directa con una directiva de actualización transforma los datos después de la ingesta, lo que no cumple el requisito. Un centro de inteligencia en tiempo real se usa para descubrir y conectarse a flujos, no para implementar la lógica de transformación y persistencia. El activador de datos se usa para escenarios de detección y respuesta, no para la transformación y carga de flujos.",
+          "references": [
+            {
+              "title": "Ingesta y transformación de datos en tiempo real"
+            },
+            {
+              "title": "Consideraciones"
+            },
+            {
+              "title": "Explore Microsoft Fabric Real-Time Intelligence"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q055",
+          "type": "single_choice",
+          "question": "Tiene un área de trabajo de Fabric que ingiere diariamente 5 TB de datos de ventas y clientes. El proceso de ingestión realiza escaneos y agregaciones extensas para crear tablas de hechos y dimensiones. El modelo curado se consulta simultáneamente por cientos de usuarios de Microsoft Power BI.\nNecesita un almacén de datos que admita la ingesta por lotes a gran escala, el análisis de alta simultaneidad y las transformaciones de T-SQL, incluidos los procedimientos almacenados.\n¿Qué almacén de datos debe usar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "almacén de datos"
+            },
+            {
+              "id": "B",
+              "text": "casa de eventos"
+            },
+            {
+              "id": "C",
+              "text": "Casa del Lago"
+            },
+            {
+              "id": "D",
+              "text": "Base de datos SQL"
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "Un almacenamiento de datos de Fabric está diseñado para cargas de trabajo analíticas a gran escala con alta simultaneidad y admite características de T-SQL, como procedimientos almacenados y transformaciones complejas. Está optimizado para las cargas de trabajo de esquema de estrella y datos estructurados consultados por muchos usuarios de Power BI. Un centro de eventos está optimizado para cargas de trabajo basadas en KQL y análisis en tiempo real. Una instancia de Lakehouse admite análisis a gran escala, pero principalmente usa puntos de conexión de Apache Spark y SQL en lugar de funcionalidades completas de procedimientos almacenados de T-SQL. Una base de datos SQL está diseñada para cargas de trabajo operativas en lugar de para el procesamiento analítico a gran escala.",
+          "references": [
+            {
+              "title": "guía de decisión Microsoft Fabric: elija entre Warehouse y Lakehouse"
+            },
+            {
+              "title": "árbol de decisión para la selección del almacén analítico en Microsoft Fabric"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q056",
+          "type": "single_choice",
+          "question": "Su organización usa Microsoft Fabric para procesar datos en tiempo real desde dispositivos IoT.\nDebe implementar una solución para ingerir y transformar datos de streaming sin escribir código.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Use Azure Event Hubs para ingerir y transformar los datos."
+            },
+            {
+              "id": "B",
+              "text": "Use Azure Stream Analytics para procesar los datos."
+            },
+            {
+              "id": "C",
+              "text": "Utilice Microsoft Spark Structured Streaming con los scripts de PySpark."
+            },
+            {
+              "id": "D",
+              "text": "Use la característica eventstreams en Microsoft Fabric con funcionalidades mejoradas."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "El uso de la característica eventstreams en Microsoft Fabric con funcionalidades mejoradas habilitadas es la opción correcta porque proporciona una solución sin código para ingerir y transformar datos de streaming, cumpliendo los requisitos del escenario. El uso de Azure Stream Analytics requiere la configuración de consultas, lo que no satisface el requisito sin código. El uso de Azure Event Hubs requiere codificación para la transformación de datos, lo que hace que no sea adecuado para el requisito sin código. El uso de Microsoft Spark Structured Streaming con scripts de PySpark también implica codificar, lo que hace que no sea adecuado para el requisito sin código.",
+          "references": [
+            {
+              "title": "Fabric Eventstream: información general: entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q057",
+          "type": "single_choice",
+          "question": "Los datos de streaming de varios orígenes se procesan mediante Microsoft Fabric, lo que requiere transformación y almacenamiento en una instancia de Lakehouse para el análisis,\nDebe seleccionar un método para una transformación eficaz y el almacenamiento de datos de streaming.\n¿Qué método debe elegir?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Azure Data Factory para la integración de datos en tiempo real"
+            },
+            {
+              "id": "B",
+              "text": "Azure Stream Analytics para el procesamiento en tiempo real."
+            },
+            {
+              "id": "C",
+              "text": "Azure Synapse Analytics para la transformación y el almacenamiento."
+            },
+            {
+              "id": "D",
+              "text": "Transmisión Estructurada de Spark con tablas Delta."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "Spark Structured Streaming con tablas Delta es el método más eficaz para transformar y almacenar datos de streaming en tiempo real, utilizando las características de Delta Lake para transacciones ACID y escalabilidad. Azure Stream Analytics no es adecuado, ya que se centra en el procesamiento en tiempo real en lugar del procesamiento por lotes. Azure Data Factory carece de las funcionalidades de procesamiento en tiempo real necesarias, lo que hace que sea más adecuado para las integraciones por lotes. Azure Synapse Analytics, aunque es eficaz, no está diseñado específicamente para la transformación y el almacenamiento de datos de streaming en tiempo real en una instancia de Lakehouse, lo que lo convierte en una opción inapropiada para este escenario.",
+          "references": [
+            {
+              "title": "Explora el almacén de datos Microsoft Fabric - Capacitación | Microsoft Learn"
+            },
+            {
+              "title": "Usar tablas delta con datos en streaming - Formación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q068",
+          "type": "single_choice",
+          "question": "Su empresa está implementando el procesamiento de datos en tiempo real mediante Spark Structured Streaming en Microsoft Fabric. Los datos de los dispositivos IoT deben almacenarse en una tabla Delta.\nDebe garantizar un procesamiento eficaz de los datos de streaming al tiempo que impide errores debidos a cambios en los datos.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Habilite el modo de sobrescritura."
+            },
+            {
+              "id": "B",
+              "text": "Establezca checkpointLocation en null."
+            },
+            {
+              "id": "C",
+              "text": "Use ignoreChanges."
+            },
+            {
+              "id": "D",
+              "text": "Usa el método Append."
+            }
+          ],
+          "correct_answers": [
+            "C"
+          ],
+          "explanation": "La opción ignoreChanges garantiza un procesamiento eficaz al permitir que la secuencia controle las modificaciones de datos sin provocar errores. Habilitar el modo de sobrescritura reemplazaría los datos existentes, lo que contradecía las necesidades de una solución de streaming que requiere la anexión continua de datos. Establecer checkpointLocation en dificultaría el seguimiento del estado de la secuencia, lo que podría provocar la pérdida de datos y las ineficacias. El uso del método Append agregaría continuamente nuevos datos sin abordar los cambios, lo que provocaría una posible duplicación de datos.",
+          "references": [
+            {
+              "title": "Usar tablas delta con datos de streaming - Formación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q091",
+          "type": "multiple_choice",
+          "question": "Su organización usa Microsoft Fabric para administrar canalizaciones de datos en un proceso ETL a gran escala. La configuración actual implica varias canalizaciones desencadenadas por eventos y programaciones específicos, frente a desafíos con valores codificados de forma rígida.\nDebe implementar la parametrización dinámica para mejorar la flexibilidad y reducir el mantenimiento.\n¿Cuáles son las dos opciones que debe configurar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Codificar valores de forma rígida en la configuración."
+            },
+            {
+              "id": "B",
+              "text": "Pase valores externos mediante parámetros de canalización."
+            },
+            {
+              "id": "C",
+              "text": "Use expresiones dinámicas para la evaluación en tiempo de ejecución."
+            },
+            {
+              "id": "D",
+              "text": "Use desencadenadores estáticos para la ejecución de la canalización."
+            },
+            {
+              "id": "E",
+              "text": "Use valores estáticos en expresiones."
+            }
+          ],
+          "correct_answers": [
+            "B",
+            "C"
+          ],
+          "explanation": "Los valores de codificación rígida de la configuración contrastan con el objetivo de reducir la sobrecarga de mantenimiento y aumentar la flexibilidad. El uso de expresiones dinámicas para la evaluación en tiempo de ejecución permite evaluar los valores de parámetro en tiempo de ejecución, lo que proporciona la flexibilidad necesaria para adaptarse a diferentes escenarios sin cambiar el código de canalización. El uso de valores estáticos en expresiones no proporciona la flexibilidad necesaria para la parametrización dinámica. El uso de desencadenadores estáticos para la ejecución de la canalización no proporciona la flexibilidad necesaria para la parametrización dinámica. Pasar valores externos mediante parámetros de canalización permite pasar valores externos a las canalizaciones, lo que hace que sean más flexibles y reduzcan la necesidad de valores codificados de forma rígida.",
+          "references": [
+            {
+              "title": "Parámetros para Data Factory en Microsoft Fabric - Capacitación | Microsoft Learn"
+            },
+            {
+              "title": "Load data using T-SQL - Training | Microsoft Learn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domain-03",
+      "name": "Supervisar y optimizar una solución de análisis",
+      "questions": [
+        {
+          "id": "DP700-Q001",
+          "type": "multiple_choice",
+          "question": "Su empresa experimenta problemas de rendimiento con su proceso ETL actual, lo que implica cargar grandes volúmenes de datos de ventas en una tabla de hechos en un almacenamiento de datos de Microsoft Fabric. Actualmente, el proceso usa una estrategia de recarga completa, que consume mucho tiempo y consume muchos recursos.\nDebe mejorar el proceso de ETL para aumentar el rendimiento y reducir el uso de recursos.\n¿Qué dos acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Continúe realizando recargas completas con un aumento de los recursos de computación."
+            },
+            {
+              "id": "B",
+              "text": "Implemente una estrategia de carga incremental."
+            },
+            {
+              "id": "C",
+              "text": "Particione manualmente la tabla de hechos."
+            },
+            {
+              "id": "D",
+              "text": "Cambie a Azure Data Factory para ETL."
+            },
+            {
+              "id": "E",
+              "text": "Usar Captura de Datos de Cambio (CDC) para realizar el seguimiento de cambios."
+            }
+          ],
+          "correct_answers": [
+            "B",
+            "E"
+          ],
+          "explanation": "La implementación de una estrategia de carga incremental es eficaz porque reduce la cantidad de datos procesados durante cada ejecución de ETL, lo que mejora el rendimiento y reduce el uso de recursos. El uso de la captura de datos modificados (CDC) para el seguimiento de los cambios también es beneficioso, ya que permite el seguimiento de los cambios en el sistema de origen, lo que permite una carga incremental eficaz de solo los datos modificados en la tabla de hechos. La continuación de las recargas completas con un aumento de los recursos de proceso puede aliviar temporalmente los problemas de rendimiento, pero no aborda las ineficacias de una estrategia de recarga completa. La creación manual de particiones de la tabla de hechos puede mejorar el rendimiento de las consultas, pero no aborda directamente las ineficiencias en el propio proceso ETL. Es posible que el cambio a Azure Data Factory para ETL sin abordar la estrategia de recarga completa no mejore el rendimiento."
+        },
+        {
+          "id": "DP700-Q009",
+          "type": "multiple_choice",
+          "question": "Va a implementar una nueva solución de análisis de datos mediante Microsoft Fabric.\nLos datos que se van a ingerir incluyen formatos estructurados, semiestructurados y no estructurados de varios orígenes.\nDebe seleccionar un almacén de datos que admita diversos formatos de datos y admita las operaciones pySpark y SQL para la transformación y el análisis de datos.\n¿Qué dos almacenes de datos debe seleccionar? Cada respuesta correcta presenta una solución completa.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Azure Data Lake Storage Gen2"
+            },
+            {
+              "id": "B",
+              "text": "Azure Synapse Analytics"
+            },
+            {
+              "id": "C",
+              "text": "Microsoft Fabric Eventhouse"
+            },
+            {
+              "id": "D",
+              "text": "Microsoft Lakehouse"
+            }
+          ],
+          "correct_answers": [
+            "B",
+            "D"
+          ],
+          "explanation": "Azure Synapse Analytics es adecuado porque admite todos los formatos de datos y permite operaciones mediante T-SQL y Spark, adaptando las diversas necesidades de conocimientos y conjuntos de aptitudes del equipo. Microsoft Lakehouse también es adecuado, ya que admite formatos de datos estructurados, semiestructurados y no estructurados, y permite operaciones que usan PySpark y SQL, en consonancia con los requisitos de datos y aptitudes del equipo. En cambio, Microsoft Fabric Eventhouse está diseñado para análisis en tiempo real y admite diversos formatos de datos, pero no está optimizado para el procesamiento por lotes o la transformación de datos a gran escala mediante PySpark y SQL, que son necesarios en este escenario. Azure Data Lake Storage Gen2, aunque es capaz de almacenar diversos formatos de datos, no admite de forma nativa las operaciones PySpark y SQL, lo que hace que no sea adecuado para este escenario.",
+          "references": [
+            {
+              "title": "Guía para la toma de decisiones de Microsoft Fabric: elegir un almacén de datos - Formación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q012",
+          "type": "single_choice",
+          "question": "Su organización usa Microsoft Fabric para flujos de trabajo de análisis de datos.\nHay retrasos en el procesamiento debido a una supervisión ineficaz de la ingesta y transformación de datos.\nDebe implementar una solución para una supervisión eficaz de los flujos de trabajo de datos.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Configure alertas en el centro de Microsoft Real-Time."
+            },
+            {
+              "id": "B",
+              "text": "Cree un panel de Power BI."
+            },
+            {
+              "id": "C",
+              "text": "Almacene eventos de datos en un lago de datos."
+            },
+            {
+              "id": "D",
+              "text": "Usa Azure Monitor."
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "La configuración de alertas en el centro de Microsoft Real-Time es la solución más eficaz porque proporciona funcionalidades de supervisión y alertas en tiempo real para los procesos de ingesta y transformación de datos, abordando directamente las necesidades de la organización. La creación de un panel de Power BI, aunque resulta útil para la visualización, carece de la funcionalidad de alertas en tiempo real necesaria. El almacenamiento de eventos de datos en un lago de datos no es suficiente, ya que no ofrece notificaciones inmediatas necesarias para las respuestas oportunas. El uso de Azure Monitor no es ideal, ya que no tiene como destino específicamente eventos de Microsoft Fabric área de trabajo, lo que hace que sea menos eficaz para este escenario.",
+          "references": [
+            {
+              "title": "Configurar alertas sobre eventos de elementos del área de trabajo de Fabric en el centro de tiempo real -"
+            },
+            {
+              "title": "Entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q013",
+          "type": "single_choice",
+          "question": "Su organización usa Microsoft Fabric para las tareas de ingeniería de datos.\nRecientemente, se han producido problemas con las ejecuciones de canalización de datos con errores intermitentes, lo que provoca retrasos en el procesamiento de datos.\nDebe supervisar las ejecuciones de canalización de datos para identificar la causa principal de los errores.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Ampliar la configuración de tiempo de espera de las canalizaciones."
+            },
+            {
+              "id": "B",
+              "text": "Reintentar ejecuciones fallidas sin investigación."
+            },
+            {
+              "id": "C",
+              "text": "Use una herramienta de terceros para supervisar las ejecuciones de canalización."
+            },
+            {
+              "id": "D",
+              "text": "Use el centro de supervisión para analizar los detalles de ejecución de la canalización."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "El acceso al centro de supervisión para ver y analizar los detalles de la ejecución de la canalización de datos es el enfoque correcto, ya que proporciona información sobre los errores, lo que permite solucionar problemas eficaces. El uso de una herramienta de terceros podría no proporcionar el mismo nivel de integración y detalles que el centro de supervisión integrado. La extensión de la configuración de tiempo de espera podría provocar ineficacias sin solucionar la causa principal de los errores. El reintento de ejecuciones con errores sin investigación no resuelve los problemas subyacentes y puede dar lugar a errores repetidos.",
+          "references": [
+            {
+              "title": "Comience a trabajar con lakehouses en Microsoft Fabric - Formación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q014",
+          "type": "multiple_choice",
+          "question": "Su organización ha implementado Microsoft Fabric para los procesos de transformación de datos.\nSe han producido instancias en las que se produce un error en las actualizaciones del modelo semántico sin notificación, lo que afecta a los informes de business intelligence.\nDebe configurar alertas para supervisar los eventos de actualización del modelo semántico y recibir notificaciones tras errores.\n¿Qué tres acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Configuración de un filtro"
+            },
+            {
+              "id": "B",
+              "text": "Notificar a través de Teams todos los eventos de actualización."
+            },
+            {
+              "id": "C",
+              "text": "Seleccione eventos de elementos del área de trabajo en el hub de Real-Time Fabric."
+            },
+            {
+              "id": "D",
+              "text": "Envíe un correo electrónico para las acciones de alerta."
+            },
+            {
+              "id": "E",
+              "text": "Establezca alertas para todos los eventos de actualización sin filtrar."
+            },
+            {
+              "id": "F",
+              "text": "Use un conjunto de consultas KQL para supervisar los estados de actualización."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "C",
+            "D"
+          ],
+          "explanation": "Para supervisar eficazmente los eventos de actualización del modelo semántico, seleccionar los eventos de elementos del área de trabajo de Fabric en el centro en tiempo real le permite acceder a los eventos relevantes para su supervisión, El envío de un correo electrónico para acciones de alerta garantiza notificaciones inmediatas tras errores de actualización, lo que facilita respuestas rápidas. El filtrado basado en el estado de refresco aísla los eventos con errores, lo que permite alertas específicas. El uso de un conjunto de consultas KQL para supervisar los estados de actualización proporciona funcionalidades de análisis de datos, pero carece de alertas en tiempo real. La notificación a través de Teams para todos los eventos de actualización no aborda la necesidad de alertas especificas de errores. Establecer alertas para todos los eventos de actualización sin filtrar puede provocar notificaciones innecesarias y no tiene como destino específicamente eventos de error.",
+          "references": [
+            {
+              "title": "Configurar alertas sobre eventos de elementos de área de trabajo de Fabric en el Centro en tiempo real -"
+            },
+            {
+              "title": "Entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q015",
+          "type": "multiple_choice",
+          "question": "Su organización usa Microsoft Fabric para administrar y analizar grandes conjuntos de datos.\nRecientemente, los problemas con los procesos de ingesta de datos producen un error intermitente, lo que provoca retrasos en la disponibilidad de datos para el análisis.\nDebe implementar una estrategia para detectar patrones o problemas periódicos en las actividades de ingesta de datos.\n¿Qué dos acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Analice los registros de errores para las actividades de ingesta anteriores."
+            },
+            {
+              "id": "B",
+              "text": "Configure alertas para futuros errores de ingesta."
+            },
+            {
+              "id": "C",
+              "text": "Filtre las actividades por estado para identificar errores."
+            },
+            {
+              "id": "D",
+              "text": "Aumente la frecuencia de las comprobaciones de ingesta de datos."
+            },
+            {
+              "id": "E",
+              "text": "Quite todos los filtros para ver todas las actividades."
+            }
+          ],
+          "correct_answers": [
+            "B",
+            "C"
+          ],
+          "explanation": "La configuración de alertas para futuros errores de ingesta garantiza una notificación inmediata y una intervención oportuna, lo que lo convierte en un enfoque de supervisión proactiva. El filtrado de actividades por estado en el centro de supervisión permite identificar rápidamente los procesos de ingesta con errores, abordando directamente la necesidad de supervisar y resolver problemas. El análisis de los registros de errores puede parecer útil para identificar patrones, pero no aborda la necesidad inmediata de supervisar y resolver los errores de forma eficaz. La eliminación de todos los filtros podría provocar una sobrecarga de información, lo que dificultaba centrarse en actividades con errores específicas.",
+          "references": [
+            {
+              "title": "Explora la \"lakehouse' de Microsoft Fabric - Formación | Microsoft Learn"
+            },
+            {
+              "title": "Prepare los datos para el análisis y los informes: entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q016",
+          "type": "single_choice",
+          "question": "Tiene un centro de eventos Fabric denominado Eventhouse1.\nDescubre que después de 10 minutos de inactividad, Eventhouse1 suspende y se debe reactivar automáticamente antes de poder consultar los datos.\nDebe impedir que Eventhouse1 se suspenda debido a la inactividad. La solución debe minimizar el esfuerzo administrativo e impedir que el centro de eventos tenga que reactivarse manualmente.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Configure un informe de Power BI programado para consultar Eventhouse1 cada cinco minutos."
+            },
+            {
+              "id": "B",
+              "text": "Habilite Always-On para Eventhouse1."
+            },
+            {
+              "id": "C",
+              "text": "Habilite la escalabilidad automática para la capacidad de Microsoft Fabric."
+            },
+            {
+              "id": "D",
+              "text": "Habilite el almacenamiento en caché de aceleración de consultas para Eventhouse1."
+            }
+          ],
+          "correct_answers": [
+            "B"
+          ],
+          "explanation": "Habilitar Always-On para Eventhouse1 es correcto porque la configuración de Always-On está diseñada específicamente para evitar que el motor de proceso de Eventhouse se suspenda automáticamente después de un período de inactividad. La configuración de un informe de Power BI programado para consultar Eventhouse1 cada cinco minutos es incorrecto porque es una solución alternativa que introduce una sobrecarga operativa innecesaria y no controla directamente el comportamiento de suspensión. La habilitación del escalado automático para la capacidad de Microsoft Fabric es incorrecta porque el escalado automático ajusta dinámicamente los recursos de capacidad en función de la demanda de la carga de trabajo, pero no impide la suspensión inactiva de un centro de eventos. Habilitar el almacenamiento en caché de aceleración de consultas para Eventhouse1 es incorrecto porque el almacenamiento en caché mejora el rendimiento y los tiempos de respuesta de las consultas, pero no tiene ningún impacto en la suspensión basada en inactividad del motor de proceso.",
+          "references": [
+            {
+              "title": "Introducción a Eventhouse"
+            },
+            {
+              "title": "Administrar y supervisar una casa de eventos"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q017",
+          "type": "single_choice",
+          "question": "Su empresa usa una arquitectura de lakehouse con Microsoft Fabric para el análisis de datos a gran escala.\nHay informes sobre retrasos en la disponibilidad de datos para el análisis en tiempo real.\nDebe optimizar el proceso de ingesta de datos para la disponibilidad oportuna de los datos.\n¿Qué debe recomendar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "la creación de particiones de datos para un acceso más rápido."
+            },
+            {
+              "id": "B",
+              "text": "Aumente el número de nodos de datos."
+            },
+            {
+              "id": "C",
+              "text": "Cambie al procesamiento por lotes de microprocesos para el análisis en tiempo real."
+            },
+            {
+              "id": "D",
+              "text": "Use Spark Structured Streaming para el procesamiento en tiempo real."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "El uso de Spark Structured Streaming para procesar datos en tiempo real a medida que llega es la recomendación correcta porque aborda directamente la necesidad de disponibilidad de datos en tiempo real. La implementación de particiones de datos mejora la velocidad de acceso, pero no resuelve los retrasos en la ingesta. Aumentar el número de nodos de datos no optimiza directamente el proceso de ingesta de datos. Cambiar al procesamiento por lotes de microproceso seguiría introduciendo retrasos, no eliminarlos.",
+          "references": [
+            {
+              "title": "Usar tablas delta con datos en streaming - Formación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q018",
+          "type": "single_choice",
+          "question": "Su organización usa Microsoft Fabric Lakehouse para administrar grandes conjuntos de datos para el análisis.\nObserve que el rendimiento de las consultas se ha degradado debido al creciente número de pequeños archivos Parquet generados durante la ingesta de datos.\nDebe reducir el número de archivos pequeños para mejorar el rendimiento de las consultas en las tablas de Microsoft Fabric Lakehouse.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Aplique el orden V para la ordenación y compresión."
+            },
+            {
+              "id": "B",
+              "text": "Aumente el tamaño del archivo mediante la compactación de Delta Lake."
+            },
+            {
+              "id": "C",
+              "text": "Use Lakehouse API para la administración de archivos."
+            },
+            {
+              "id": "D",
+              "text": "Use Optimize para consolidar archivos pequeños."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "El uso del comando Optimize en Microsoft Fabric Lakehouse consolida varios archivos pequeños de Parquet en archivos más grandes, lo que mejora el rendimiento de las consultas al reducir el número de archivos que se deben examinar durante las operaciones de lectura. La aplicación del orden V optimiza la ordenación y la compresión, pero no aborda especificamente el problema de consolidar archivos pequeños en archivos más grandes. Aumentar el tamaño de archivo mediante la compactación de Delta Lake podría parecer una solución, pero no aborda directamente el problema de consolidar archivos pequeños. El uso de la API de Lakehouse para la administración de archivos podría parecer una solución para optimizar los tamaños de archivo, pero no aborda directamente el problema de consolidar archivos pequeños para mejorar el rendimiento de las consultas.",
+          "references": [
+            {
+              "title": "Use la funcionalidad de mantenimiento de tablas para administrar tablas diferenciales en Fabric - Entrenamiento |"
+            },
+            {
+              "title": "Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q019",
+          "type": "single_choice",
+          "question": "Su empresa usa Microsoft Fabric arquitectura lakehouse para almacenar y procesar grandes volúmenes de datos.\nObserve que algunas consultas no funcionan según lo previsto, especialmente las que implican funciones definidas por el usuario (UDF).\nDebe garantizar un rendimiento óptimo de las consultas al tiempo que mantiene el uso de\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Habilite el modo de simultaneidad alta."
+            },
+            {
+              "id": "B",
+              "text": "Habilite el almacenamiento en caché de consultas."
+            },
+            {
+              "id": "C",
+              "text": "Cambie a otro motor de ejecución."
+            },
+            {
+              "id": "D",
+              "text": "Ajuste la configuración de Spark."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "El uso del motor de Spark tradicional para consultas que implican UDF garantiza la compatibilidad y mantiene el rendimiento debido a la falta de compatibilidad del motor de ejecución nativo para las UDF. Habilitar el modo de simultaneidad alta podría mejorar el rendimiento general, pero no abordar los problemas de rendimiento específicos con las UDF. La habilitación del almacenamiento en caché de consultas no soluciona el problema de compatibilidad con las UDF en el motor de ejecución nativo. Cambiar a otro motor de ejecución podría parecer una solución, pero no resuelve los problemas de compatibilidad con las UDF.",
+          "references": [
+            {
+              "title": "Load data using T-SQL - Training | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q020",
+          "type": "single_choice",
+          "question": "Su empresa usa Microsoft Fabric para administrar tareas de procesamiento de datos a gran escala.\nObservará problemas de rendimiento con trabajos de Spark que implican transformaciones y agregaciones complejas en datos de formato Delta.\nDebe mejorar el rendimiento de estos trabajos de Spark sin modificar el código base existente.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Habilite la ejecución de consultas adaptables."
+            },
+            {
+              "id": "B",
+              "text": "Habilite la asignación dinámica."
+            },
+            {
+              "id": "C",
+              "text": "Habilite el modo de simultaneidad alta."
+            },
+            {
+              "id": "D",
+              "text": "Habilite el motor de ejecución nativo."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "Habilitar el motor de ejecución nativo en la configuración del entorno optimiza el rendimiento de trabajos complejos de Spark sin modificaciones de código. La habilitación de la asignación dinámica puede provocar ineficacias de recursos y no mejora directamente el rendimiento de las transformaciones y agregaciones complejas. Habilitar el modo de simultaneidad alta permite a varios usuarios compartir sesiones de Spark, pero no mejora directamente el rendimiento de las transformaciones y agregaciones complejas. Habilitar la ejecución de consultas adaptables es una consideración común para optimizar el rendimiento del trabajo de Spark, pero no aborda directamente los problemas de rendimiento específicos relacionados con transformaciones y agregaciones complejas en datos de formato Delta.",
+          "references": [
+            {
+              "title": "Load data using T-SQL - Training | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q021",
+          "type": "single_choice",
+          "question": "Su empresa usa Microsoft Fabric Lakehouse para almacenar y analizar grandes conjuntos de datos.\nObserva un aumento de los costos de almacenamiento debido a los archivos antiguos que ya no son necesarios para las operaciones actuales.\nDebe reducir los costos de almacenamiento mediante la eliminación de archivos innecesarios al tiempo que se mantiene la integridad de los datos.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Habilite la compresión V-Order."
+            },
+            {
+              "id": "B",
+              "text": "Reduzca el período de retención de archivos."
+            },
+            {
+              "id": "C",
+              "text": "Use el comando OPTIMIZE."
+            },
+            {
+              "id": "D",
+              "text": "Use el comando VACUUM."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "El comando VACUUM quita eficazmente los archivos sin referencia anteriores al umbral de retención, lo que reduce los costos de almacenamiento al tiempo que mantiene la integridad de los datos. La habilitación de la compresión de orden V optimiza la compresión de archivos y el rendimiento de lectura, pero no quita archivos innecesarios. Reducir el período de retención de archivos puede parecer una medida de ahorro de costos, pero puede poner en peligro la integridad de los datos y afectar a las funcionalidades de viaje en tiempo de Delta. El uso del comando OPTIMIZE consolida los archivos para el rendimiento, pero no quita archivos innecesarios, lo que es necesario para reducir los costos de almacenamiento.",
+          "references": [
+            {
+              "title": "Use la función de mantenimiento de tablas para administrar tablas delta en Fabric - Entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q022",
+          "type": "multiple_choice",
+          "question": "Su empresa usa Microsoft Fabric para administrar una instancia de Data Lakehouse a gran escala que contiene numerosas tablas Delta. Las tablas se actualizan con frecuencia mediante cuadernos y son consultadas por varios equipos de análisis.\nObserve que el rendimiento de las consultas se ha degradado a lo largo del tiempo, lo que provoca un aumento de los tiempos de procesamiento y mayores costos.\nDebe recomendar estrategias de mantenimiento para mejorar la eficacia de las tablas Delta en un lago.\n¿Qué tres acciones debe recomendar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Aplicar orden V."
+            },
+            {
+              "id": "B",
+              "text": "Habilite el almacenamiento en caché delta."
+            },
+            {
+              "id": "C",
+              "text": "Uso del comando OPTIMIZE"
+            },
+            {
+              "id": "D",
+              "text": "Reduzca el período de retención."
+            },
+            {
+              "id": "E",
+              "text": "Use el comando VACUUM."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "C",
+            "E"
+          ],
+          "explanation": "La aplicación de V-Order optimiza la ordenación, la codificación y la compresión de archivos Delta Parquet, lo que mejora las operaciones de lectura y mantiene un rendimiento eficaz de las consultas. La realización de la compactación bin consolida los pequeños archivos Parquet en archivos más grandes, lo que mejora la eficacia de lectura y reduce el número de archivos analizados durante las consultas. El uso del comando VACUUM quita los archivos antiguos, optimizando los costos de almacenamiento y mejorando potencialmente el rendimiento de las consultas al reducir el desorden. Reducir el período de retención puede parecer beneficioso para el rendimiento, pero puede provocar la pérdida de datos y poner en peligro las funcionalidades de viaje en tiempo de Delta. La habilitación del almacenamiento en caché delta puede parecer beneficiosa para el rendimiento, pero puede provocar un aumento del uso de memoria y una posible degradación del rendimiento si no se administra correctamente.",
+          "references": [
+            {
+              "title": "Utilice la función de mantenimiento de tablas para administrar tablas delta en Fabric - Entrenamiento | Microsoft"
+            },
+            {
+              "title": "Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q023",
+          "type": "single_choice",
+          "question": "Tiene un Fabric lakehouse que contiene una tabla Delta denominada SalesSilver.\nUn trabajo de streaming estructurado de Apache Spark escribe en SalesSilver cada minuto y crea muchos archivos Parquet pequeños.\nLos usuarios consultan SalesSilver a través del punto de conexión de SQL Analytics. La latencia de consulta aumenta debido al número de archivos.\nDebe reducir la sobrecarga de archivos pequeños mediante una configuración persistente para asegurarse de que las escrituras futuras creen menos archivos pero más grandes y la fragmentación restante se compacta automáticamente. La solución NO debe cambiar la frecuencia de streaming o usar un motor diferente.\n¿Qué deberías hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Establezca delta.parquetvorder.enabled en true."
+            },
+            {
+              "id": "B",
+              "text": "Use RDD en lugar de DataFrames en la canalización de Spark."
+            },
+            {
+              "id": "C",
+              "text": "Ejecute VACUUM SalesSilver RETAIN O HORAS después de cada microproceso."
+            },
+            {
+              "id": "D",
+              "text": "Establezca delta.autoOptimize.optimizeWrite y delta.autoOptimize.autoCompact en true."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "Al establecer delta.autoOptimize.optimizeWrite y delta.autoOptimize.autoCompact en true, se reduce el número de archivos pequeños creados por escrituras futuras y se compacta automáticamente la fragmentación restante. Habilitar V-Order puede mejorar el rendimiento de lectura, pero no aborda la creación de archivos pequeños. VACUUM quita archivos obsoletos y no combina archivos pequeños activos. La reescritura de la canalización para usar RDD no aborda los requisitos de optimización de tablas delta y infringe la restricción.",
+          "references": [
+            {
+              "title": "Compactación automática"
+            },
+            {
+              "title": "Optimización de la escritura"
+            },
+            {
+              "title": "Rendimiento de las consultas"
+            },
+            {
+              "title": "Optimizar trabajos de Apache Spark en Azure Synapse Analytics"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q025",
+          "type": "single_choice",
+          "question": "Su organización usa Microsoft Fabric para la ingeniería de datos.\nObservará retrasos en los trabajos de Apache Spark debido a una gran demanda de recursos compartidos.\nDebe optimizar el tiempo de ejecución del trabajo de Spark mediante la configuración de un grupo de Spark personalizado.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cree un grupo de Spark personalizado con el escalado automático habilitado y establezca el número máximo de nodos en función de la carga máxima."
+            },
+            {
+              "id": "B",
+              "text": "Cree un grupo de Spark personalizado con asignación de nodos estáticos."
+            },
+            {
+              "id": "C",
+              "text": "Habilite la asignación estática de ejecutores."
+            },
+            {
+              "id": "D",
+              "text": "Use un grupo de Spark personalizado con un número fijo de nodos."
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "Crear un grupo de Spark personalizado con el escalado automático habilitado y establecer el número máximo de nodos en función de la carga máxima esperada es efectivo porque permite al sistema ajustar dinámicamente los recursos según la demanda, lo que garantiza una ejecución eficaz del trabajo. La habilitación de la asignación estática de ejecutores o nodos provocaría un uso ineficaz de los recursos, ya que no se adapta a distintas cargas de trabajo. El aumento del tamaño del nodo del grupo de inicio existente no es factible, ya que el tamaño del nodo está predefinido y no se puede modificar. El uso de un grupo de Spark personalizado con un número fijo de nodos no aborda el problema principal de contención de recursos y puede dar lugar a un uso ineficaz de los recursos.",
+          "references": [
+            {
+              "title": "Prepare para usar Apache Spark- Training | Microsoft Learn"
+            },
+            {
+              "title": "Explora el almacén de datos Microsoft Fabric - Capacitación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q027",
+          "type": "multiple_choice",
+          "question": "Su organización usa Microsoft Fabric para administrar tareas de ingeniería de datos. La configuración actual incluye un grupo de inicio para trabajos de Apache Spark.\nUsted nota que algunos trabajos requieren más recursos de computación de los que el grupo inicial puede proporcionar.\nDebe optimizar la configuración del área de trabajo para controlar eficazmente trabajos de Spark más grandes sin aumentar significativamente los tiempos de inicio de sesión.\n¿Qué dos acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cree un grupo de Spark personalizado con escalado automático."
+            },
+            {
+              "id": "B",
+              "text": "Deshabilitar el grupo de inicio."
+            },
+            {
+              "id": "C",
+              "text": "Habilite la asignación dinámica de ejecutores."
+            },
+            {
+              "id": "D",
+              "text": "Aumente la memoria del ejecutor en el pool inicial."
+            },
+            {
+              "id": "E",
+              "text": "Aumente el número de particiones en el trabajo de Spark."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "C"
+          ],
+          "explanation": "La creación de un grupo de Spark personalizado con escalado automático permite especificar tamaños de nodo y habilitar la asignación dinámica de recursos, lo que es esencial para controlar trabajos de Spark más grandes. La habilitación de la asignación dinámica de ejecutores optimiza aún más el uso de recursos ajustando el número de ejecutores en función de las demandas de carga de trabajo. Al deshabilitar el grupo de inicio sin un grupo personalizado, se reducen los recursos disponibles, mientras que el aumento de la memoria del ejecutor en el grupo de inicio carece del aspecto dinámico necesario para la administración eficaz de recursos. El aumento del número de particiones no aborda el problema principal de administrar trabajos de Spark más grandes.",
+          "references": [
+            {
+              "title": "Prepare para usar Apache Spark | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q036",
+          "type": "single_choice",
+          "question": "Su empresa ha implementado una arquitectura de lakehouse mediante Microsoft Fabric para admitir el análisis de datos a gran escala.\nLos procesos de transformación de datos deben optimizarse para mejorar el rendimiento y la confiabilidad.\nDebe supervisar los procesos de transformación de datos para detectar cuellos de botella o errores y mejorarlos en consecuencia.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Configure alertas para errores de transformación."
+            },
+            {
+              "id": "B",
+              "text": "Habilite el registro detallado para el análisis de rendimiento."
+            },
+            {
+              "id": "C",
+              "text": "Implemente el escalado automatizado para los procesos de transformación."
+            },
+            {
+              "id": "D",
+              "text": "Use herramientas de supervisión básicas sin configuraciones avanzadas."
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "La configuración de alertas en el centro de supervisión es eficaz porque garantiza que el equipo reciba una notificación de los errores de transformación de datos, lo que permite una resolución rápida. La habilitación del registro detallado puede ayudar a analizar el rendimiento, pero no aborda directamente la supervisión ni la identificación de problemas específicos. La implementación de escalado automatizado puede controlar las fluctuaciones de rendimiento, pero no aborda la supervisión ni la identificación de problemas específicos. El uso de herramientas de supervisión básicas sin configuraciones avanzadas es inadecuado para supervisar eficazmente los procesos de transformación de datos a gran escala.",
+          "references": [
+            {
+              "title": "Prepare los datos para el análisis y los informes: entrenamiento | Microsoft Learn"
+            },
+            {
+              "title": "Usar el centro de supervisión - Entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q038",
+          "type": "multiple_choice",
+          "question": "Su organización usa Microsoft Fabric para administrar y supervisar diversas actividades de datos, como canalizaciones de datos, flujos de datos y modelos semánticos. Los datos se almacenan en un lakehouse.\nRecientemente, ha habido problemas con retrasos en los procesos de ingesta y transformación de datos.\nDebe identificar y resolver las causas de estos retrasos para mejorar la eficacia del procesamiento de datos.\n¿Qué dos acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Filtre las actividades por estado y hora de inicio."
+            },
+            {
+              "id": "B",
+              "text": "Aumente la capacidad de almacenamiento de datos."
+            },
+            {
+              "id": "C",
+              "text": "Optimice los procesos de transformación de datos."
+            },
+            {
+              "id": "D",
+              "text": "Configure alertas para retrasos en el proceso de datos."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "D"
+          ],
+          "explanation": "La configuración de alertas para retrasos en el proceso de datos es fundamental, ya que proporciona notificaciones inmediatas, lo que permite la administración proactiva y la resolución oportuna de problemas. El filtrado de actividades por estado y hora de inicio en el centro de supervisión permite identificar procesos retrasados específicos, lo que facilita la solución de problemas dirigida. La optimización de los procesos de transformación de datos puede mejorar la eficacia, pero puede no abordar el problema principal si los retrasos se deben a otros factores. El aumento de la capacidad de almacenamiento de datos sin comprender la causa principal de los retrasos puede no resolver el problema y podría provocar costos innecesarios.",
+          "references": [
+            {
+              "title": "Explora el almacén de datos Microsoft Fabric - Capacitación | Microsoft Learn"
+            },
+            {
+              "title": "Prepare los datos para el análisis y los informes: entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q039",
+          "type": "single_choice",
+          "question": "Tiene un área de trabajo de Fabric denominada Workspace1 que contiene una canalización de datos denominada Pipeline1.\nPipeline1 se ejecuta cada mañana y carga datos en una instancia de Lakehouse denominada Lakehousel.\nDetecta que Pipeline1 carga los datos correctamente, pero la carga tarda más de lo esperado.\nDebe supervisar el proceso de transformación de datos para identificar posibles problemas de rendimiento.\n¿Qué debe usar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "un flujo de datos"
+            },
+            {
+              "id": "B",
+              "text": "una canalización"
+            },
+            {
+              "id": "C",
+              "text": "un activador"
+            },
+            {
+              "id": "D",
+              "text": "Centro de supervisión"
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "El centro de supervisión presenta métricas de transformación e información sobre el rendimiento; los activadores automatizan las respuestas a eventos, los flujos de datos realizan transformaciones y las canalizaciones orquestan tareas, pero no proporcionan vistas de supervisión dedicadas.",
+          "references": [
+            {
+              "title": "Introduction"
+            },
+            {
+              "title": "Descripción de la supervisión"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q040",
+          "type": "single_choice",
+          "question": "Tiene un área de trabajo de Fabric que ejecuta una canalización cada 15 minutos. La canalización ejecuta una instancia de Dataflow Gen2 para ingerir datos y, a continuación, desencadena una actualización del modelo semántico de un informe de Microsoft Power BI.\nLos usuarios empresariales acceden al informe durante el horario comercial y requieren notificaciones cuando se retrasa o se produce un error en la ingesta.\nDebe configurar una alerta que se desencadene automáticamente cuando se detecte una condición al cambiar los datos.\n¿Qué debe usar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Activador"
+            },
+            {
+              "id": "B",
+              "text": "Capacidad"
+            },
+            {
+              "id": "C",
+              "text": "Centro de supervisión"
+            },
+            {
+              "id": "D",
+              "text": "OneLlake"
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "El activador detecta condiciones en el streaming o los datos cambiantes y puede desencadenar acciones, como alertas y flujos de trabajo, cuando se producen umbrales y eventos especificados. Esta funcionalidad está diseñada para respuestas automatizadas a condiciones de datos. El centro de supervisión proporciona supervisión operativa, pero no crea alertas basadas en reglas sobre el cambio de datos. Las herramientas de capacidad realizan un seguimiento del rendimiento y el uso de la capacidad en lugar de las condiciones de ingesta. OneLake es la capa de almacenamiento unificada y no proporciona funcionalidad de alertas.",
+          "references": [
+            {
+              "title": "Monitorear actividades en Microsoft Fabric - Resumen"
+            },
+            {
+              "title": "Comprender la Arquitectura de Fabric"
+            },
+            {
+              "title": "5. Uso de la línea base de supervisión"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q042",
+          "type": "single_choice",
+          "question": "Tiene un área de trabajo de Fabric denominada Workspace1 que contiene un cuaderno denominado Notebook1.\nCada vez que intente ejecutar recibirá el siguiente mensaje de error: \"Su sesión se cerró por inactividad\".\nDescubre que puede ejecutar correctamente Notebook1 después de iniciar manualmente una sesión en el cuaderno.\nDebe asegurarse de que puede ejecutar Notebook1 sin iniciar manualmente una sesión. La solución debe minimizar el esfuerzo administrativo.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Pida a un administrador de Fabric que reanude la capacidad. />"
+            },
+            {
+              "id": "B",
+              "text": "Amplíe el tiempo de espera de la sesión del área de trabajo."
+            },
+            {
+              "id": "C",
+              "text": "En el menú Editar, active Autoguardado."
+            },
+            {
+              "id": "D",
+              "text": "En el indicador Listo para la sesión, actualice la duración del tiempo de espera de la sesión."
+            }
+          ],
+          "correct_answers": [
+            "B"
+          ],
+          "explanation": "Aumentar el tiempo de espera de las sesiones del área de trabajo evita frecuentes interrupciones; el indicador de sesión no puede cambiar el tiempo de espera; el autoguardado no afecta la ejecución del programa; la capacidad ya está activa y no está relacionada con los tiempos de espera por sesión.",
+          "references": [
+            {
+              "title": "Guía de solución de problemas de cuadernos de Fabric"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q044",
+          "type": "single_choice",
+          "question": "Tiene una canalización de Fabric que usa una actividad \"Execute Pipeline\" para llamar a una canalización secundaria denominada \"pl_LoadTables\". La canalización primaria pasa un parámetro denominado tables. El parámetro se define como matriz en ambas canalizaciones.\nEn la canalización secundaria, una actividad ForEach usa la siguiente expresión de elementos. Opipeline().parameters.tables\nSe produce un error en la ejecución de la canalización y se genera el siguiente error.\nresultado de la evaluación de la expresión \"foreach\" \"Opipeline(.parameters.tables\". es del tipo \"String\". El resultado debe ser una matriz válida.\nDebe asegurarse de que las tablas se pasan a la canalización secundaria como una matriz para que se pueda ejecutar la actividad ForEach.\n¿Qué debe hacer en la canalización primaria?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cambie el tipo de parámetro tables de la canalización secundaria de Array a String."
+            },
+            {
+              "id": "B",
+              "text": "Cambie la expresión de elementos ForEach a Ostring(pipeline().parameters.tables)."
+            },
+            {
+              "id": "C",
+              "text": "Envuelva el valor del parámetro utilizando la función en la actividad Ejecutar tubería."
+            },
+            {
+              "id": "D",
+              "text": "Agregue un parámetro de canalización para el identificador de ejecución de la actividad ForEach y use el parámetro como expresión de elementos."
+            }
+          ],
+          "correct_answers": [
+            "C"
+          ],
+          "explanation": "Ajustar el valor mediante createArray() en la actividad Ejecutar Canalización asegura que el parámetro pase como un array, lo que permite que la actividad ForEach itere sobre los elementos correctamente. La conversión del parámetro en una cadena no cumple los requisitos, ya que la actividad ForEach requiere una matriz. Cambiar el tipo de parámetro de la canalización secundaria a String impide que la actividad ForEach sobre varios valores. Agregar un parámetro de identificador de ejecución no aborda la falta de coincidencia de tipos que provocó el error.",
+          "references": [
+            {
+              "title": "Solucionar problemas de las canalizaciones para Data Factory en Microsoft Fabric: General"
+            },
+            {
+              "title": "Componentes clave de canalización"
+            },
+            {
+              "title": "Descripción de las canalizaciones"
+            },
+            {
+              "title": "Orquesta procesos y movimientos de datos con Microsoft Fabric - Resumen"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q045",
+          "type": "multiple_choice",
+          "question": "Su empresa tiene una secuencia de eventos mediante Microsoft Fabric para procesar datos en tiempo real de varios orígenes.\nObserve que los errores frecuentes en tiempo de ejecución afectan al procesamiento de datos.\nDebe garantizar un procesamiento de datos sin problemas mediante la identificación y resolución de errores en tiempo de ejecución.\n¿Qué tres acciones deben realizarse? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Compruebe Data Insights para ver las métricas de eventos."
+            },
+            {
+              "id": "B",
+              "text": "Deshabilite la transformación de datos de eventstream."
+            },
+            {
+              "id": "C",
+              "text": "Filtre los registros por gravedad de error."
+            },
+            {
+              "id": "D",
+              "text": "Modifique la lógica de transformación de datos."
+            },
+            {
+              "id": "E",
+              "text": "Revise los registros en tiempo de ejecución para ver los detalles del error."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "C",
+            "E"
+          ],
+          "explanation": "La revisión de los registros en tiempo de ejecución proporciona información detallada sobre errores, esencial para diagnosticar problemas. La comprobación de información de datos ayuda a identificar los cuellos de botella de rendimiento o los problemas. El filtrado de registros por gravedad permite la priorización de errores críticos, lo que garantiza que se solucionan rápidamente. La modificación de la lógica de transformación de datos puede parecer una manera de solucionar errores, pero no resuelve el problema real. El aumento del número de nodos de eventstream no aborda directamente la causa principal de los errores en tiempo de ejecución.",
+          "references": [
+            {
+              "title": "Supervisión del estado y rendimiento de un flujo de eventos - Capacitación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q046",
+          "type": "single_choice",
+          "question": "Su empresa usa Microsoft Fabric arquitectura lakehouse para almacenar y procesar grandes volúmenes de datos.\nObserve que algunas consultas no funcionan según lo previsto, especialmente las que implican funciones definidas por el usuario (UDFP).\nDebe garantizar un rendimiento óptimo de las consultas al tiempo que mantiene el uso de UDF,\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Habilite el modo de simultaneidad alta."
+            },
+            {
+              "id": "B",
+              "text": "Habilite el almacenamiento en caché de consultas."
+            },
+            {
+              "id": "C",
+              "text": "Cambie a otro motor de ejecución."
+            },
+            {
+              "id": "D",
+              "text": "Ajuste la configuración de Spark."
+            }
+          ],
+          "correct_answers": [
+            "D"
+          ],
+          "explanation": "El uso del motor de Spark tradicional para consultas que implican UDF garantiza la compatibilidad y mantiene el rendimiento debido a la falta de compatibilidad del motor de ejecución nativo para las UDF. Habilitar el modo de simultaneidad alta podría mejorar el rendimiento general, pero no abordar los problemas de rendimiento específicos con las UDF. La habilitación del almacenamiento en caché de consultas no soluciona el problema de compatibilidad con las UDF en el motor de ejecución nativo. Cambiar a otro motor de ejecución podría parecer una solución, pero no resuelve los problemas de compatibilidad con las UDF.",
+          "references": [
+            {
+              "title": "Load data using T-SQL - Training | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q047",
+          "type": "multiple_choice",
+          "question": "Su organización usa Microsoft Fabric para administrar datos en tiempo real desde dispositivos IoT enviados a Azure Centro de eventos.\nDebe recomendar una solución para procesar eventos para su almacenamiento en un Fabric lakehouse,\n¿Qué dos acciones debe recomendar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Configure una secuencia de eventos con Azure centro de eventos como origen."
+            },
+            {
+              "id": "B",
+              "text": "Use Azure Data Factory para la ingesta de datos en tiempo real."
+            },
+            {
+              "id": "C",
+              "text": "Use Azure Stream Analytics para procesar datos de Azure Centro de eventos."
+            },
+            {
+              "id": "D",
+              "text": "Utilice canalizaciones de Data Factory para ingerir datos en el almacén de datos."
+            },
+            {
+              "id": "E",
+              "text": "Use el procesador de eventos para filtrar y transformar datos."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "E"
+          ],
+          "explanation": "La configuración de una secuencia de eventos con Azure centro de eventos como origen es esencial para ingerir datos en tiempo real en Microsoft Fabric, lo que permite la configuración inicial del flujo de datos. El uso del procesador de eventos para filtrar y transformar los datos garantiza que solo se almacenen los datos necesarios, optimizando la eficiencia de procesamiento y almacenamiento. El uso de canalizaciones de Data Factory no es adecuado para el procesamiento de eventos en tiempo real, ya que están diseñados para el procesamiento por lotes. El uso de Azure Stream Analytics para procesar datos de Azure Centro de eventos no es adecuado para el objetivo específico de almacenar datos procesados en un Fabric lakehouse. El uso de Azure Data Factory para la ingesta de datos en tiempo real no es adecuado, ya que es más adecuado para el procesamiento por lotes.",
+          "references": [
+            {
+              "title": "Comience con lakehouses en Microsoft Fabric - Formación | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q052",
+          "type": "single_choice",
+          "question": "Una empresa utiliza una arquitectura de lakehouse con Microsoft Fabric.\nTiene previsto transformar grandes conjuntos de datos en formato Delta para el aprendizaje automático.\nDebe realizar transformaciones de datos de forma eficaz mediante herramientas de Microsoft Fabric.\n¿Qué debe usar?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Cuadernos."
+            },
+            {
+              "id": "B",
+              "text": "Azure Data Factory."
+            },
+            {
+              "id": "C",
+              "text": "Power BI flujos de datos."
+            },
+            {
+              "id": "D",
+              "text": "SQL Server Management Studio."
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "Los cuadernos de Apache Spark son ideales para procesar transformaciones de datos a gran escala y admitir el formato Delta, lo que hace que sean adecuados para este escenario. Los flujos de datos de Power BI a menudo se confunden con Dataflows Gen2, pero no están diseñados para transformaciones de datos de gran escala en un entorno de almacén de datos en lago. Azure Data Factory es una herramienta eficaz para la integración y orquestación de datos, pero no está diseñada específicamente para transformaciones de datos directas dentro de un entorno de lakehouse mediante el formato Delta. SQL Server Management Studio se usa principalmente para administrar bases de datos SQL y no está optimizado para transformaciones de datos a gran escala en un entorno de lakehouse.",
+          "references": [
+            {
+              "title": "Explora el Microsoft Fabric lakehouse - Training | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q058",
+          "type": "single_choice",
+          "question": "Su empresa ha implementado una arquitectura de lakehouse mediante Microsoft Fabric para admitir el análisis de datos a gran escala.\nLos procesos de transformación de datos deben optimizarse para mejorar el rendimiento y la confiabilidad.\nDebe supervisar los procesos de transformación de datos para detectar cuellos de botella o errores y mejorarios en consecuencia.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Configure alertas para errores de transformación."
+            },
+            {
+              "id": "B",
+              "text": "Habilite el registro detallado para el análisis de rendimiento."
+            },
+            {
+              "id": "C",
+              "text": "Implemente el escalado automatizado para los procesos de transformación."
+            },
+            {
+              "id": "D",
+              "text": "Use herramientas de supervisión básicas sin configuraciones avanzadas."
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "La configuración de alertas en el centro de supervisión es eficaz porque garantiza que el equipo reciba una notificación de los errores de transformación de datos, lo que permite una resolución rápida. La habilitación del registro detallado puede ayudar a analizar el rendimiento, pero no aborda directamente la supervisión ni la identificación de problemas específicos. La implementación de escalado automatizado puede controlar las fluctuaciones de rendimiento, pero no aborda la supervisión ni la identificación de problemas específicos. El uso de herramientas de supervisión básicas sin configuraciones avanzadas es inadecuado para supervisar eficazmente los procesos de transformación de datos a gran escala.",
+          "references": [
+            {
+              "title": "Prepare los datos para el análisis y los informes: entrenamiento | Microsoft Learn"
+            },
+            {
+              "title": "Usar el centro de supervisión - Entrenamiento | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q065",
+          "type": "single_choice",
+          "question": "Su empresa usa Microsoft Fabric para su almacenamiento de datos, cargando grandes conjuntos de datos desde Azure Blob Storage.\nDebe garantizar una ingesta de datos eficaz con errores mínimos.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Habilite la creación de particiones de datos antes de cargarlos."
+            },
+            {
+              "id": "B",
+              "text": "Use una sola instrucción INSERT para cada fila."
+            },
+            {
+              "id": "C",
+              "text": "Utilice la instrucción COPY con caracteres comodín."
+            },
+            {
+              "id": "D",
+              "text": "Use varias instrucciones INSERT para cada fila."
+            }
+          ],
+          "correct_answers": [
+            "C"
+          ],
+          "explanation": "El uso de la instrucción COPY con caracteres comodín permite una carga eficaz de datos masivos desde varios archivos, lo que minimiza la complejidad y reduce la posibilidad de errores. Habilitar la creación de particiones de datos antes de cargar se centra en optimizar el rendimiento de las consultas, lo que no mejora directamente la eficacia de la ingesta de datos. El uso de una sola instrucción INSERT para cada fila es ineficaz y aumenta la probabilidad de errores, especialmente con grandes conjuntos de datos. El uso de una sola instrucción INSERT por archivo no es adecuado para grandes conjuntos de datos debido a un aumento de los tiempos de transacción y posibles errores.",
+          "references": [
+            {
+              "title": "COPY INTO (Transact-SQL) - Formación | Microsoft Learn"
+            },
+            {
+              "title": "Load data using T-SQL - Training | Microsoft Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q067",
+          "type": "multiple_choice",
+          "question": "Su empresa usa Microsoft Fabric Lakehouse para administrar grandes conjuntos de datos para el análisis.\nRecientemente, el rendimiento de las consultas en una tabla Delta se ha degradado debido a un aumento en los archivos Parquet pequeños.\nDebe optimizar la tabla Delta para mejorar la eficacia de las consultas.\n¿Qué dos acciones debe realizar? Cada respuesta correcta presenta parte de la solución.",
+          "options": [
+            {
+              "id": "A",
+              "text": "Aplique V-Order para mejorar la ordenación y compresión de datos."
+            },
+            {
+              "id": "B",
+              "text": "Convierta al formato de tabla de Hive."
+            },
+            {
+              "id": "C",
+              "text": "Aumente el número de particiones de la tabla Delta."
+            },
+            {
+              "id": "D",
+              "text": "Use el comando OPTIMIZE para consolidar archivos."
+            }
+          ],
+          "correct_answers": [
+            "A",
+            "D"
+          ],
+          "explanation": "La aplicación de V-Order optimiza la ordenación, la codificación y la compresión, lo que mejora las operaciones de lectura y el rendimiento general de las consultas. El comando Optimize consolida varios archivos Parquet pequeños en archivos más grandes, lo que mejora el rendimiento de las consultas al reducir el número de archivos que se deben examinar. No se admite la conversión a un formato de tabla de Hive para tablas Delta en Lakehouse y no mejoraría el rendimiento. Aumentar el número de particiones puede parecer beneficioso, pero puede provocar un aumento de la sobrecarga y tiempos de consulta más lentos si no se administra correctamente.",
+          "references": [
+            {
+              "title": "Utiliza la función de mantenimiento de tablas para administrar tablas delta en Fabric - Entrenamiento | Microsoft"
+            },
+            {
+              "title": "Learn"
+            }
+          ]
+        },
+        {
+          "id": "DP700-Q080",
+          "type": "single_choice",
+          "question": "Su empresa usa Microsoft Fabric para flujos de trabajo de ingeniería de datos.\nObserve que los trabajos de Spark son lentos debido a la asignación de recursos poco óptima.\nDebe mejorar la eficacia del trabajo de Spark ajustando la configuración del entorno.\n¿Qué debe hacer?",
+          "options": [
+            {
+              "id": "A",
+              "text": "Habilite la asignación dinámica de ejecutores."
+            },
+            {
+              "id": "B",
+              "text": "Aumente el número de particiones."
+            },
+            {
+              "id": "C",
+              "text": "Establezca una asignación de memoria fija para ejecutores."
+            },
+            {
+              "id": "D",
+              "text": "Establezca un número fijo de nodos."
+            }
+          ],
+          "correct_answers": [
+            "A"
+          ],
+          "explanation": "La habilitación de la asignación dinámica de ejecutores en la configuración del entorno de Spark es beneficiosa porque permite al sistema ajustar los recursos en función de la carga de trabajo, lo que mejora la eficacia. Establecer un número fijo de nodos o una asignación de memoria fija para ejecutores puede provocar un uso ineficaz de los recursos, ya que no se adaptan a cargas de trabajo variables. Aumentar el número de particiones es una idea errónea común de que mejorará la eficiencia del trabajo, pero puede provocar sobrecarga y no necesariamente mejorar la asignación de recursos.",
+          "references": [
+            {
+              "title": "Prepare para usar Apache Spark- Training | Microsoft Learn"
+            },
+            {
+              "title": "Explora el almacén de datos Microsoft Fabric - Capacitación | Microsoft Learn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
